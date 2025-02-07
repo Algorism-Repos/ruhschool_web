@@ -1,0 +1,213 @@
+body{
+    background-color: #FFF2DD;
+    position: relative;
+    z-index: 0;
+    /* overflow: hidden; */
+
+}
+
+@font-face{
+    font-family: "HugmeTight";
+    src: url("./assets/fonts/Hug\ Me\ Tight\ -\ OTF.otf") format(opentype);
+}
+
+@font-face{
+    font-family: "Causten";
+    font-weight: 200;
+    src: url("./assets/fonts/Causten-Round/Causten-ExtraLight.otf") format("opentype");
+}
+
+@font-face{
+    font-family: "Causten";
+    font-weight: 300;
+    src: url("./assets/fonts/Causten-Round/Causten-Light.otf") format("opentype");
+}
+
+@font-face{
+    font-family: "Causten";
+    font-weight: 400;
+    src: url("./assets/fonts/Causten-Round/Causten-Regular.otf") format("opentype");
+}
+
+@font-face{
+    font-family: "Causten";
+    font-weight: 500;
+    src: url("./assets/fonts/Causten-Round/Causten-Medium.otf") format("opentype");
+}
+
+@font-face{
+    font-family: "Causten";
+    font-weight: 600;
+    src: url("./assets/fonts/Causten-Round/Causten-SemiBold.otf") format("opentype");
+}
+
+@font-face{
+    font-family: "Causten";
+    font-weight: 700;
+    src: url("./assets/fonts/Causten-Round/Causten-Bold.otf") format("opentype");
+}
+
+
+/* Font Aeyln */
+@font-face{
+    font-family: "PS-Aelyn";
+    src: url("./assets/fonts/Aelyn-Free/PS-Aelyn-Regular.otf") format("opentype");
+}
+
+.newsletter-field{
+    width: 296px;
+    height: 44px;
+    border-radius: 8px;
+    background-color: #FFF8EC;
+    border-width: 1.3px;
+    border-color: #913412;
+    padding-left: 10px;
+    font-family: "Causten", "sans-serif";
+    outline: none;
+}
+
+.form-label{
+    font-family: "Causten", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #913412;
+}
+.form-field{
+    width: 100%;
+    border-color: #D0D5D0; 
+    border-width: 1px;
+    background-color: transparent;
+    border-radius: 8px;
+    height: 40px;
+    outline: none;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.form-field-error{
+    width: 100%;
+    border-color: red; 
+    border-width: 1px;
+    background-color: transparent;
+    border-radius: 8px;
+    height: 40px;
+    outline: none;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.form-field-textarea{
+    width: 100%;
+    border-color: #D0D5D0; 
+    border-width: 1px;
+    background-color: transparent;
+    border-radius: 8px;
+    height: 80px;
+    outline: none;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.form-field::placeholder{
+    font-family: 'Causten', sans-serif;
+    font-size: 16px;
+}
+
+textarea::placeholder{
+    font-family: 'Causten', sans-serif;
+    font-size: 16px;
+}
+
+.form-error{
+    font-family: 'Causten', sans-serif;
+    font-size: 14px;
+    color: red;
+}
+
+.swiper-membership .swiper-slide{
+    width: fit-content !important;
+}
+
+ .swiper-banner .swiper-slide{
+    height: fit-content !important;
+}
+
+.carousel{
+    height: 350vh;
+}
+
+/* .contentContainer{
+    height: 120vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+} */
+.images{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    
+}
+
+.select{
+    font-family: 'Causten', sans-serif;
+    font-size: 16px;
+    color: grey
+}
+
+
+/* @media screen and (max-width: 1180px){
+    /* .contentContainer{
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
+} */
+
+@media screen and (max-width: 650px) {
+    .newsletter-field{
+        width: 202px;
+        height: 44px;
+        border-radius: 8px;
+        background-color: #FFF8EC;
+        border-width: 1.3px;
+        border-color: #913412;
+        padding-left: 10px;
+        font-family: "Causten", "sans-serif";
+        outline: none;
+
+    }
+
+    .swiper-stories .swiper-slide{
+        width: 361px !important;
+        margin-left: 410px;
+    }
+
+    .carousel{
+        height: 90vh;
+    }
+    
+    .contentContainer{
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
+    .images{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        
+    }
+}
