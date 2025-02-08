@@ -74,6 +74,8 @@ function Contact (){
     console.log("formValues",formValues);
     console.log(formErrors);
     handleGoogleSheet(formValues)
+    setformValues(initialValues);
+
   }
 
   const handleGoogleSheet = (formValues) => {
