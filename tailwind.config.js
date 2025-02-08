@@ -23,6 +23,7 @@ module.exports = {
       backgroundImage:{
         'home-animation': 'url("/src/assets/images/home/animation_bg.png")',
         'home-animation-mobile': 'url("/src/assets/images/home/animation_bg_mobile.png")',
+        'youtube-frame': 'url("/src/assets/images/yt_frame.png")',
       },
 
       keyframes: {

@@ -266,35 +266,24 @@ function Home (){
 
     const Testimonial = [
         {
-            name: "Andrea Nair",
-            parentof: "Ria's Mom",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+            name: "Divya Kannan",
+            parentof: "Dhev's Mom",
+            content: "The kindness of the entire team and the caring and gentle approach they took with the children truly stood out to us. This school itself is amazing, and we are so happy with everything. Thank you for all the great work you are doing!",
             
         },
         {
-            name: "Andrea Nair",
-            parentof: "Ria's Mom",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+            name: "Jaanaki",
+            parentof: "Jaanaki's Parent",
+            content: "We, Jaanki’s parents, are extremely pleased and grateful for all the support, teachings, and progress she has made under your guidance. We extend our love, gratitude, and appreciation to each one of you.",
             
         },
         {
-            name: "Andrea Nair",
-            parentof: "Ria's Mom",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+            name: "Hamsa Varshini",
+            parentof: "Karthik Parent",
+            content: "A big thank you to Team Ruh for shaping Vishrutha into who she is today. She joined as an infant and is now a toddler, Team Ruh has played an essential role in her journey. Great work by all the educators and assistant educators",
             
         },
 
-        {
-            name: "Andrea Nair",
-            parentof: "Ria's Mom",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-        },
-
-        {
-            name: "Andrea Nair",
-            parentof: "Ria's Mom",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-        },
     ]
 
     return(
@@ -710,8 +699,8 @@ function Home (){
             </div>
 
             {/* Youtube Video Section */}
-            <div className = "max-w-screen-xl mx-auto my-20 h-fit">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/t6W-IGl30G4?si=MC_Od6xSR29GuyDr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div className = " relative  max-w-screen-xl mx-auto my-16 sm:my-40 h-[300px] sm:h-[700px] youtube-border !px-3">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/t6W-IGl30G4?si=MC_Od6xSR29GuyDr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
 
             {/* Contact Learning Advisory Section */}
@@ -868,7 +857,7 @@ function Home (){
                 <motion.div 
                         initial = {{x: 0}}  
                         animate = {{x: '-100%'}}
-                        transition={{duration: 5, repeat: Infinity, ease:"linear"}}
+                        transition={{duration: 50, repeat: Infinity, ease:"linear"}}
                         className="flex flex-row gap-x-3 sm:gap-x-12 mt-12 shrink-0"
                     >
                         <img src={afs_logo} alt="afs_logo" className="w-[84px] h-[75px] sm:w-[168px] sm:h-[150px]"/>    
@@ -885,7 +874,7 @@ function Home (){
                     <motion.div 
                         initial = {{x: 0}}  
                         animate = {{x: '-100%'}}
-                        transition={{duration: 5, repeat: Infinity, ease:"linear"}}
+                        transition={{duration: 50, repeat: Infinity, ease:"linear"}}
                         className="flex flex-row gap-x-3 sm:gap-x-12 mt-12 shrink-0"
                     >
                         <img src={afs_logo} alt="afs_logo" className="w-[84px] h-[75px] sm:w-[168px] sm:h-[150px]"/>    
@@ -906,7 +895,7 @@ function Home (){
                         className="flex flex-row gap-x-3 sm:gap-x-12 mt-12 shrink-0"
                         initial = {{x: "-100%"}}
                         animate = {{x : 0}}
-                        transition = {{ duration: 5, repeat: Infinity, ease: "linear"}}
+                        transition = {{ duration: 50, repeat: Infinity, ease: "linear"}}
                     >
                         <img src={acceleratedprogram_logo} alt="afs_logo" className="w-[115px] h-[75px] sm:w-[230px] sm:h-[150px]"/>
                         <img src={worldready_logo} alt="afs_logo" className="w-[149px] h-[75px] sm:w-[299px] sm:h-[150px]"/>
@@ -919,7 +908,7 @@ function Home (){
                     <motion.div 
                         initial = {{x: "-100%"}}
                         animate = {{x : 0}}
-                        transition = {{ duration: 5, repeat: Infinity, ease: "linear"}}
+                        transition = {{ duration: 50, repeat: Infinity, ease: "linear"}}
                         className="flex flex-row gap-x-3 sm:gap-x-12 mt-12 shrink-0"
                     >
                         <img src={acceleratedprogram_logo} alt="afs_logo" className="w-[115px] h-[75px] sm:w-[230px] sm:h-[150px]"/>
@@ -936,7 +925,7 @@ function Home (){
                     <motion.div
                         initial = {{x:0}}
                         animate  = {{x: "-100%"}}
-                        transition = {{duration: 5, repeat: Infinity, ease: "linear"}}
+                        transition = {{duration: 50, repeat: Infinity, ease: "linear"}}
                         className="flex flex-row gap-x-3 sm:gap-x-12 shrink-0 mt-12"
                     >
                         <img src={cambridge_logo} alt="afs_logo" className="w-[232px] h-[75px] sm:w-[464px] sm:h-[150px]"/>
@@ -948,7 +937,7 @@ function Home (){
                     <motion.div
                         initial = {{x:0}}
                         animate  = {{x: "-100%"}}
-                        transition = {{duration: 5, repeat: Infinity, ease: "linear"}}
+                        transition = {{duration: 50, repeat: Infinity, ease: "linear"}}
                         className="flex flex-row gap-x-3 sm:gap-x-12 shrink-0 mt-12"
                     >
                         <img src={cambridge_logo} alt="afs_logo" className="w-[232px] h-[75px] sm:w-[464px] sm:h-[150px]"/>
@@ -1043,7 +1032,7 @@ function Home (){
 
                     <div className = "flex gap-x-12 mt-7">
                         <motion.div 
-                            className = "flex flex-row items-center gap-x-12"
+                            className = "flex flex-row items-end gap-x-12 shrink-0"
                             initial = {{x : 0}}
                             animate = {{x : "-100%"}}
                             transition = {{duration: 30, repeat: Infinity, ease: "linear"}}
@@ -1052,9 +1041,9 @@ function Home (){
                             {Testimonial.map((items) => {
                                 return(
                                     <>
-                                        <div className ={`bg-white max-w-[370px] text-wrap  w-fit h-fit py-12 px-9 rounded-[24px] shrink-0`}>
+                                        <div className ={`bg-white py-12 px-9 rounded-[24px] shrink-0 max-w-[500px] w-full`}>
                                             <img src={testimonial_stars} alt="rating-image" />
-                                            <h5 className={`font-causten font-normal text-[32px] w-[350px] max-w-full  leading-[44px] tracking-[-2%] mt-7`}>{items.content}</h5>
+                                            <h5 className={`font-causten font-normal sm:text-[32px] text-[25px] max-w-full leading-[44px] tracking-[-2%] mt-7`}>{items.content}</h5>
                                             <h6 className = "font-causten font-medium text-[18px] leading-[28px] mt-12">- {items.name}</h6>
                                             <h6 className = "font-causten font-medium text-[16px] leading-[24px] text-[#667085]">{items.parentof}</h6>
                                         </div>
@@ -1062,9 +1051,9 @@ function Home (){
                                 )
                             })}
                         </motion.div>
-                        
+
                         <motion.div 
-                            className = "flex flex-row items-center gap-x-12"
+                            className = "flex flex-row items-end gap-x-12 shrink-0"
                             initial = {{x : 0}}
                             animate = {{x : "-100%"}}
                             transition = {{duration: 30, repeat: Infinity, ease: "linear"}}
@@ -1073,9 +1062,9 @@ function Home (){
                             {Testimonial.map((items) => {
                                 return(
                                     <>
-                                        <div className ={`bg-white max-w-[370px] text-wrap  w-fit h-fit py-12 px-9 rounded-[24px] shrink-0`}>
+                                        <div className ={`bg-white py-12 px-9 rounded-[24px] shrink-0 max-w-[500px] w-full`}>
                                             <img src={testimonial_stars} alt="rating-image" />
-                                            <h5 className={`font-causten font-normal text-[32px] w-[350px] max-w-full leading-[44px] tracking-[-2%] mt-7`}>{items.content}</h5>
+                                            <h5 className={`font-causten font-normal sm:text-[32px] text-[25px] max-w-full  leading-[44px] tracking-[-2%] mt-7`}>{items.content}</h5>
                                             <h6 className = "font-causten font-medium text-[18px] leading-[28px] mt-12">- {items.name}</h6>
                                             <h6 className = "font-causten font-medium text-[16px] leading-[24px] text-[#667085]">{items.parentof}</h6>
                                         </div>
@@ -1083,6 +1072,8 @@ function Home (){
                                 )
                             })}
                         </motion.div>
+
+                       
                     </div>
 
                     {/* <Swiper
