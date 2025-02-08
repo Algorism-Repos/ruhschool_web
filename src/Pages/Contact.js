@@ -71,15 +71,30 @@ function Contact (){
     e.preventDefault();
     setformErrors(validate(formValues));
     
-    console.log(formValues);
+    console.log("formValues",formValues);
     console.log(formErrors);
-
+    handleGoogleSheet(formValues)
   }
 
- 
-  
-
-
+  const handleGoogleSheet = (formValues) => {
+     console.log("formValues from google sheets",formValues)
+        fetch(
+        "https://script.google.com/macros/s/AKfycbyM7qvdDxVa8KPFXTohc4tnGpv4f0oi5gzs6eaEfxMenBi26qaf1bmwur2v6XS0aLNWYQ/exec",
+        {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: new URLSearchParams(formValues),
+        }
+         )
+        .then((res) => res.text(console.log("response", res)))
+        .then((data) => {
+        console.log("data", data);
+        })
+        .catch((error) => {
+        console.log("error", error);
+        });
+    };
 
   return(
     <>
@@ -114,7 +129,7 @@ function Contact (){
                 <div className = "grid grid-cols-1 sm:grid-cols-2 gap-x-7 gap-y-5 sm:gap-y-0 items-center justify-between ">
 
                     <div>
-                      <h5 className= "form-label">Parebts Name</h5>
+                      <h5 className= "form-label">Parents Name</h5>
                       <input 
                         type = "text"
                         className = {!formErrors.parent_name ? "form-field" : "form-field-error"}
