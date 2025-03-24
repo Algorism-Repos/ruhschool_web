@@ -23,6 +23,12 @@ module.exports = {
       backgroundImage:{
         'home-animation': 'url("/src/assets/images/home/animation_bg.png")',
         'home-animation-mobile': 'url("/src/assets/images/home/animation_bg_mobile.png")',
+        'youtube-frame': 'url("/src/assets/images/yt_frame.png")',
+        'curriculum' : 'url("/src/assets/images/curriculum/banner_image.png")',        
+        'sports': 'url("/src/assets/images/sports/banner_image.png")',
+        'sports-mobile': 'url("/src/assets/images/sports/banner_image_mobile.png")',
+        'about': 'url("/src/assets/images/about/nav_bg.png")',
+        'curriculum-mobile': 'url("/src/assets/images/curriculum/bg_curriculum_mobile.png")'
       },
 
       keyframes: {

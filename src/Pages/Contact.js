@@ -1,7 +1,6 @@
 import {React, useState, useEffect} from "react";
-import { Link } from "react-router-dom";
-import logo from "../assets/images/Nav_logo.png"
-import hamburger_menu from "../assets/images/hamburger_menu.png"
+import { Link, useNavigate } from "react-router-dom";
+import Navbar from "../Components/Navbar"
 import banner_line from "../assets/images/home/banner_line.png"
 import AOS from "aos"
 import "aos/dist/aos.css"
@@ -23,6 +22,7 @@ function Contact (){
     AOS.init({duration:1500})
   }, [])
 
+  const navigate = useNavigate();
   const initialValues = {
     parent_name: "",
     learner_name: "",
@@ -59,6 +59,8 @@ function Contact (){
     }
     if(!values.phone){
       errors.phone = "Please enter your phone number"
+    } if(values.phone.length != 10){
+      errors.phone = "Please enter a valid phone number"
     }
     if(!values.grade){
       errors.grade = "Please select your grade"
@@ -71,10 +73,13 @@ function Contact (){
     e.preventDefault();
     setformErrors(validate(formValues));
     
-    console.log("formValues",formValues);
-    console.log(formErrors);
-    handleGoogleSheet(formValues)
-    setformValues(initialValues);
+    if(Object.keys(validate(formValues)).length === 0){
+      handleGoogleSheet(formValues)
+      alert("Your form has been successfully submitted!")
+      navigate ("/home");
+      setformValues(initialValues);
+    }
+    
 
   }
 
@@ -100,21 +105,7 @@ function Contact (){
 
   return(
     <>
-      <div className="flex flex-row justify-between items-center w-full relative left-0 top-5 px-3 z-10 sm:hidden">
-          <Link to ="/"><img src={logo} alt="ruh_logo" className="w-[100px]" /></Link>
-          <img src={hamburger_menu} alt="hamburger_menu" className="w-[30px] h-[30px] cursor-pointer" onClick={() => {setNavMenu(true)}} />
-      </div>
-
-
-      {/* Navbar - Big Screen */}
-      <div className = "hidden sm:block relative">
-        <div className=" w-full pt-16 px-28 z-10">
-            <div className="flex flex-row justify-between items-center" data-aos= "fade-up"  >
-                <Link to ="/home"><img src={logo} alt="RUH-Logo" className="w-[153px] h-[99px]" /></Link>
-                <img src={hamburger_menu} alt="hamburger-icon" className="w-[47px] h-[47px] cursor-pointer "/>
-            </div>
-        </div>
-      </div>
+      <Navbar />
 
         <div className = "max-w-screen-xl mx-auto w-full my-9 sm:my-20 sm:px-24 px-5" >
           <div className = "flex flex-col gap-y-14 items-center sm:gap-y-0 sm:flex-row sm:items-start justify-between">
@@ -144,7 +135,7 @@ function Contact (){
                     </div>
 
                     <div>
-                      <h5 className= "form-label">Learner Name</h5>
+                      <h5 className= "form-label">Learner's Name</h5>
                       <input 
                         type = "text"
                         className = {!formErrors.learner_name ? "form-field" : "form-field-error"}
@@ -256,20 +247,20 @@ function Contact (){
                     
                     <div className="flex flex-col gap-y-12 sm:flex-row sm:gap-x-36 text-offwhite mt-20">
                         <div className="flex flex-col gap-y-3">
-                            <h5 className="font-causten font-bold text-[36px] sm:text-[48px] leading-[20px] uppercase">Home</h5>
+                            <Link to = "/underconstruction"><h5 className="font-causten font-bold text-[36px] sm:text-[48px] leading-[20px] uppercase">Home</h5></Link>
 
-                            <p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer mt-3">about us</p>
-                            <p className="font-causten font-extralight text-[24px] leading-[24px]cursor-pointer">curriculum</p>
+                            <a href= "https://www.ruhprimary.in/aboutus" ><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer mt-3">about us</p></a>
+                            <a href= "https://www.ruhprimary.in/curriculum" ><p className="font-causten font-extralight text-[24px] leading-[24px]cursor-pointer">curriculum</p></a>
                             <Link to ="/contact"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer">contact us</p></Link>
                         </div>
 
                         <div className="flex flex-col gap-y-3">
-                            <h5 className="font-causten font-bold text-[36px] sm:text-[48px] leading-[20px] uppercase">Life @ RUH</h5>
+                            <Link to = "/underconstruction"><h5 className="font-causten font-bold text-[36px] sm:text-[48px] leading-[20px] uppercase">Life @ RUH</h5></Link>
 
-                            <p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer mt-3">school life</p>
-                            <p className="font-causten font-extralight text-[24px] leading-[24px]cursor-pointer">sports & co-curricular</p>
-                            <p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer">parent's corner</p>
-                            <p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer">publications</p>
+                            <a href = "https://www.ruhprimary.in/schoollife"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer mt-3">school life</p></a>
+                            <a href = "https://www.ruhprimary.in/sports-cocurricular"><p className="font-causten font-extralight text-[24px] leading-[24px]cursor-pointer">sports & co-curricular</p></a>
+                            <a href = "https://www.ruhprimary.in/parentscorner"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer">parent's corner</p></a>
+                            <Link to = "/underconstruction"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer">publications</p></Link>
                         </div>
                     </div>
 
