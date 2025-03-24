@@ -36,20 +36,20 @@ function Footer (){
                     <div className="">
                         <div className="flex flex-row gap-x-20">
                             <div className="flex flex-col gap-y-3">
-                                <Link to ="/underconstruction"><h5 className="font-causten font-bold text-[24px] leading-[20px] uppercase">Home</h5></Link>
+                                <Link to ="/"><h5 className="font-causten font-bold text-[24px] leading-[20px] uppercase">Home</h5></Link>
 
-                                <Link to ="/underconstruction"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer mt-3">about us</p></Link>
-                                <Link to ="/underconstruction"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer">curriculum</p></Link>
+                                <Link to = "/about"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer mt-3" onClick={scrollTop}>about us</p></Link>
+                                <Link to = "/curriculum"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer" onClick={scrollTop}>curriculum</p></Link>
                                 <Link to ="/contact"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer" onClick={scrollTop}>contact us</p></Link>
                             </div>
 
                             <div className="flex flex-col gap-y-3">
-                                <Link to = "/underconstruction"><h5 className="font-causten font-bold text-[24px] leading-[20px] uppercase">Life @ RUH</h5></Link>
+                                <Link to = "/life@RUH"><h5 className="font-causten font-bold text-[24px] leading-[20px] uppercase">Life @ RUH</h5></Link>
 
-                                <Link to = "/underconstruction"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer mt-3">school life</p></Link>
-                                <Link to = "/underconstruction"><p className="font-causten font-extralight text-[24px] leading-[24px]cursor-pointer">sports & co-curricular</p></Link>
-                                <a href="https://forms.ruhftop.in" target="_blank"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer">parent's corner</p></a>
-                                <Link to = "/underconstruction"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer">publications</p></Link>
+                                <Link to = "/life@RUH"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer mt-3" onClick={scrollTop}>school life</p></Link>
+                                <Link to = "/sports"><p className="font-causten font-extralight text-[24px] leading-[24px]cursor-pointer" onClick={scrollTop}>sports & co-curricular</p></Link>
+                                <Link to = "/parents-corner"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer" onClick={scrollTop}>parent's corner</p></Link>
+                                {/* <Link to = "/underconstruction"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer">publications</p></Link> */}
                             </div>
                         </div>
 
@@ -68,12 +68,13 @@ function Footer (){
                 <hr className="border-t-1 border-brown w-full mt-12" />
 
                 <div className="flex flex-row items-center justify-between mt-5">
-                    <p className="font-causten font-semibold text-[16px] text-brown">2024 Ruh Schools, All rights reserved</p>
+                    <p className="font-causten font-semibold text-[16px] text-brown">Ruh Continuum School 2025. All Rights Reserved</p>
                     
                     <div className="flex flex-row items-center gap-x-5">
-                        <p className="font-causten font-semibold text-[16px] text-brown cursor-pointer">Terms</p>
+                        {/* <p className="font-causten font-semibold text-[16px] text-brown cursor-pointer">Terms</p>
                         <p className="font-causten font-semibold text-[16px] text-brown cursor-pointer">Privacy</p>
-                        <p className="font-causten font-semibold text-[16px] text-brown cursor-pointer">Cookies</p>
+                        <p className="font-causten font-semibold text-[16px] text-brown cursor-pointer">Cookies</p> */}
+                        <a href="https://ssvminstitutions.ac.in" target="_blank"><p className="font-causten font-semibold text-[16px] text-brown cursor-pointer">SSVM Instituitions</p></a>
                     </div>
                 </div>
             </div>
@@ -86,18 +87,17 @@ function Footer (){
                         <div className="flex flex-col gap-y-3">
                             <Link to ="/underconstruction"><h5 className="font-causten font-bold text-[20px] leading-[20px] uppercase">Home</h5></Link>
 
-                            <Link to ="/underconstruction"><p className="font-causten font-extralight text-[16px] leading-[24px] cursor-pointer ">about us</p></Link>
-                            <Link to ="/underconstruction"><p className="font-causten font-extralight text-[16px] leading-[24px]cursor-pointer">curriculum</p></Link>
+                            <Link to = "/about"><p className="font-causten font-extralight text-[16px] leading-[24px] cursor-pointer" onClick={scrollTop}>about us</p></Link>
+                            <Link to = "/curriculum"><p className="font-causten font-extralight text-[16px] leading-[24px] cursor-pointer" onClick={scrollTop}>curriculum</p></Link>
                             <Link to ="/contact"><p className="font-causten font-extralight text-[16px] leading-[24px] cursor-pointer" onClick={scrollTop}>contact us</p></Link>
                         </div>
 
                         <div className="flex flex-col gap-y-3">
-                            <Link to= "/underconstruction"><h5 className="font-causten font-bold text-[20px] leading-[20px] uppercase">Life @ RUH</h5></Link>
-
-                            <Link to= "/underconstruction"><p className="font-causten font-extralight text-[16px] leading-[24px] cursor-pointer ">school life</p></Link>
-                            <Link to= "/underconstruction"><p className="font-causten font-extralight text-[16px] leading-[24px]cursor-pointer">sports & co-curricular</p></Link>
-                            <a href="https://forms.ruhftop.in" target="_blank"><p className="font-causten font-extralight text-[16px] leading-[24px] cursor-pointer">parent's corner</p></a>
-                            <Link to= "/underconstruction"><p className="font-causten font-extralight text-[16px] leading-[24px] cursor-pointer">publications</p></Link>
+                            <Link to= "/life@RUH"><h5 className="font-causten font-bold text-[20px] leading-[20px] uppercase" onClick={scrollTop}>Life @ RUH</h5></Link>
+                            <Link to = "/life@RUH"><p className="font-causten font-extralight text-[16px] leading-[24px] cursor-pointer" onClick={scrollTop}>school life</p></Link>
+                            <Link to = "/sports"><p className="font-causten font-extralight text-[16px] leading-[24px] cursor-pointer" onClick={scrollTop}>sports & co-curricular</p></Link>
+                            <Link to = "/parents-corner"><p className="font-causten font-extralight text-[16px] leading-[24px] cursor-pointer" onClick={scrollTop}>parent's corner</p></Link>
+                            {/* <Link to= "/underconstruction"><p className="font-causten font-extralight text-[16px] leading-[24px] cursor-pointer">publications</p></Link> */}
                         </div>
                     </div>
 
@@ -123,12 +123,13 @@ function Footer (){
 
                     <hr className="border-t-1 border-brown mt-12 w-full" />
 
-                    <p className="font-causten font-semibold text-[17px] text-brown text-center mt-3">2024 Ruh Schools, All rights reserved</p>
+                    <p className="font-causten font-semibold text-[17px] text-brown text-center mt-3">Ruh Continuum School 2025. All rights reserved</p>
 
                     <div className="flex flex-row items-center justify-center mt-3 gap-x-5">
-                        <p className="font-causten font-semibold text-[16px] text-brown cursor-pointer">Terms</p>
+                        {/* <p className="font-causten font-semibold text-[16px] text-brown cursor-pointer">Terms</p>
                         <p className="font-causten font-semibold text-[16px] text-brown cursor-pointer">Privacy</p>
-                        <p className="font-causten font-semibold text-[16px] text-brown cursor-pointer">Cookies</p>
+                        <p className="font-causten font-semibold text-[16px] text-brown cursor-pointer">Cookies</p> */}
+                        <a href="https://ssvminstitutions.ac.in" target="_blank"><p className="font-causten font-semibold text-[16px] text-brown cursor-pointer">SSVM Instituitions</p></a>
                     </div>    
                         
                         

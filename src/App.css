@@ -172,6 +172,24 @@ iframe{
     border-color: #913412;
 }
 
+.blog-para{
+    color: #000;
+    font-family: 'Causten', sans-serif;
+    font-size: 24px;
+    line-height: 44px;
+}
+
+.blog-heading{
+    color: #000;
+    font-family: 'Causten', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+
+
+
+
 
 /* @media screen and (max-width: 1180px){
     /* .contentContainer{
@@ -186,6 +204,22 @@ iframe{
 } */
 
 @media screen and (max-width: 650px) {
+    .blog-para{
+        color: #000;
+        font-family: 'Causten', sans-serif;
+        font-size: 16px;
+        line-height: 33px;
+    }
+    
+    .blog-heading{
+        color: #000;
+        font-family: 'Causten', sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+    }
+    
+    
+    
     .newsletter-field{
         width: 202px;
         height: 44px;

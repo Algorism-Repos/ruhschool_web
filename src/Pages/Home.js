@@ -13,7 +13,7 @@ import "aos/dist/aos.css";
 import {motion, useScroll, useTransform, AnimatePresence} from "framer-motion";
 
 import stories_image from "../assets/images/home/stores_section_image.png"
-import footer_logo from "../assets/images/footer-logo.png"
+import logo_offwhite from "../assets/images/ruhlogo_offwhite.png"
 import cofounder_image from "../assets/images/home/co-founder_image.png"
 import animation_placeholder from "../assets/images/home/animation-placeholder.png"
 import advisory_kid from "../assets/images/home/advsior-section_image.png"
@@ -23,16 +23,12 @@ import faculty_icon from "../assets/images/home/faculty_icon.png"
 import student_impact_icon from "../assets/images/home/student-impact_icon.png"
 import ssvm_logo from "../assets/images/home/ssvm_logo.png"
 import founder_image from "../assets/images/home/founder-image.png"
-import friends_has from "../assets/images/home/friends_has.png"
-import friends_doc from "../assets/images/home/friends_doc.png"
-import friends_yuva from "../assets/images/home/friends_yuva.png"
-import friends_raack from "../assets/images/home/friends_raack.png"
-import friends_spacekids from "../assets/images/home/friends_spacekidz.png"
 import curious_section_image from "../assets/images/home/curious_section_image.png"
 import arrow_up_right from "../assets/images/home/arrow-up-right.png"
 import post_image_1 from "../assets/images/home/post_image_1.png"
 import post_image_2 from "../assets/images/home/post_image_2.png"
 import intuitive from "../assets/images/home/animation-elements/intuitive.png"
+import community from "../assets/images/home/animation-elements/community.png"
 import mindful_yellow from "../assets/images/home/animation-elements/mindful_yellow.png"
 import mindful_orange from "../assets/images/home/animation-elements/mindful_orange.png"
 import global_learning from "../assets/images/home/animation-elements/global_learning.png"
@@ -93,7 +89,10 @@ import kid_image_without from "../assets/images/home/kid_image_without.png"
 import visual from "../assets/images/home/visual.png"
 import listening from "../assets/images/home/listening.png"
 import kinaesthetic from "../assets/images/home/kinaesthetic.png"
-import intuitive_path from "../assets/images/home/animation-elements/Intuitive_path.svg"
+
+import Navbar from "../Components/Navbar";
+import Friends from "../Components/Friends";
+import Curioustoknowmore from "../Components/Curioustoknowmore";
 
 
 
@@ -166,6 +165,11 @@ function Home (){
     //   }, []);
 
     const images = [new_ruh, old_ruh];
+
+    function clickHandler (){
+        setNavMenu (true);
+        console.log("Muhil");
+    }
 
 
     const [isHorizontalScrolling, setIsHorizontalScrolling] = useState(true);
@@ -274,12 +278,12 @@ function Home (){
         {
             name: "Jaanaki",
             parentof: "Jaanaki's Parent",
-            content: "We, Jaanki’s parents, are extremely pleased and grateful for all the support, teachings, and progress she has made under your guidance. We extend our love, gratitude, and appreciation to each one of you.",
+            content: "We, Jaanaki’s parents, are extremely pleased and grateful for all the support, teachings, and progress she has made under your guidance. We extend our love, gratitude, and appreciation to each one of you.",
             
         },
         {
             name: "Hamsa Varshini",
-            parentof: "Karthik Parent",
+            parentof: "Vishrutha's Parent",
             content: "A big thank you to Team Ruh for shaping Vishrutha into who she is today. She joined as an infant and is now a toddler, Team Ruh has played an essential role in her journey. Great work by all the educators and assistant educators",
             
         },
@@ -288,15 +292,17 @@ function Home (){
 
     return(
         <>
-
-            <div className = "sm:hidden block relative">
-                <div ref={containerRef_mobile} className = "flex flex-row overflow-x-hidden">
-                    <div className="flex flex-row items-center justify-between w-full absolute left-0 top-9 px-3 z-30">
-                        <img src={logo} alt="ruh_logo" className="w-[100px]" />
+            
+            {/* Small screen - Banner */}
+            <div className = "sm:hidden block relative" ref={containerRef_mobile}>
+                    <div className="flex flex-row justify-between items-center w-full absolute left-0 top-5 px-3 z-10 sm:hidden">
+                        <Link to ="/"><img src={logo} alt="ruh_logo" className="w-[100px]" /></Link>
                         <img src={hamburger_menu} alt="hamburger_menu" className="w-[30px] h-[30px] cursor-pointer" onClick={() => {setNavMenu(true)}} />
                     </div>
+                <div className = "flex flex-row overflow-x-hidden">   
+
                     {/* Banner-1 */}
-                    <div className = "relative shrink-0 content-mobile w-screen h-screen z-10">
+                    <div className = "relative shrink-0 content-mobile w-screen h-screen z-5">
                         <img src={navimage_1_mobile} alt="nav-image" className="w-full h-[641px]" />
                         
                         <div className="mx-auto mt-12 flex flex-col items-center">
@@ -308,7 +314,7 @@ function Home (){
                     </div>
                 
                     {/* Banner-2 */}
-                    <div className="relative shrink-0 content-mobile w-screen h-screen z-10">
+                    <div className="relative shrink-0 content-mobile w-screen h-screen z-5">
                         <div className="mx-auto mt-36 flex flex-col items-center">
                             <h1 className="font-aelyn text-[24px] leading-[25px] text-brown font-normal w-[280px] text-center ">An ideal environment <span className="font-causten font-bold text-green">that nutures creativity</span></h1>
                             <img src={banner_line} alt="banner_line" className="w-[203px] h-[7px]" />
@@ -320,7 +326,7 @@ function Home (){
                     </div>
 
                     {/* Banner-3 */}
-                    <div className = "shrink-0 content-mobile w-screen h-screen z-20">
+                    <div className = "shrink-0 content-mobile w-screen h-screen z-5">
                         <img src={navimage_3_mobile} alt="nav-image" className="w-full h-[415px]" />
                             
                         <div className="mx-auto mt-20 flex flex-col items-center">
@@ -401,17 +407,17 @@ function Home (){
             </div>*/}
             
             
-            
+            {/* Banner Section - Large Screens (GSAP) */}
             <div className = "sm:block relative hidden">
                 <div ref={containerRef} id="horizontal-container " className ="flex flex-row h-screen">
                          <div className=" absolute w-full top-0 sm:top-7 left-0 px-24  z-10 ">
                             <div className="flex flex-row justify-between items-center  ">
-                                <img src={logo} alt="RUH-Logo" className="w-[153px] h-[99px]" />
+                                <Link to = "/"><img src={logo} alt="RUH-Logo" className="w-[153px] h-[99px]" /></Link>
                                 <img src={hamburger_menu} alt="hamburger-icon" className="w-[47px] h-[47px] cursor-pointer " onClick={() => {setNavMenu(true)}} />
                             </div>
                          </div>
                     {/* Banner-1 */}
-                    <div className="flex flex-row items-center w-screen h-screen shrink-0 relative content">
+                    <div className="flex flex-row items-center w-screen h-screen shrink-0 relative content z-5">
                         <img src={navimage_1} className="w-3/4 h-full object-cover "/>
 
                         <div className="w-1/4 flex flex-col items-center ">
@@ -453,7 +459,7 @@ function Home (){
             
             
             
-            {/* Banner Section - large screens (Framer-motion) */}
+            {/* Banner Section - large screens (Framer-motion) -Hidden */}
             <div className=" relative hidden">
                 <div className = "carousel relative" ref={bannerRef} >
                     <div className = "contentContainer" >
@@ -574,40 +580,25 @@ function Home (){
         
             {/* Stories Section */}
             <div className="max-w-screen-xl mx-auto mt-9 swiper-stories" data-aos="fade-up" >
-                <div className="flex flex-row justify-center items-center gap-x-5 gap-y-5 flex-wrap  md:flex-nowrap" >
+                <div className="flex flex-row justify-center items-center gap-x-5 gap-y-5 flex-wrap  md:flex-nowrap " >
                     {/* <img src={stories_image} alt="stories-section-image" className="w-[361px] h-[261px] sm:w-[391.3px] sm:h-[283px] " /> */}
                    <div className = "w-[400px]">
 
-                   <AnimatePresence mode="wait">
-                        <motion.img
-                        key={visibleIndex}
-                        src={images[visibleIndex]}
-                        alt={`Slide ${visibleIndex}`}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="w-full h-full object-cover"
-                        />
-                    </AnimatePresence>
-                    {/* <Swiper
-                            modules={[Autoplay]}
-                            slidesPerView={1}
-                            loop= {true}
-                            autoplay = {{delay: 1300}}
-                            centeredSlides= {true}
-                        >
-                            <SwiperSlide>
-                                <img src={old_ruh} alt="old_school_image" className = "w-[361px] h-[261px] mx-auto" />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <img src={new_ruh} alt="new_school_image" className = "w-[361px] h-[261px] mx-auto" />
-                            </SwiperSlide>
-
-                        </Swiper> */}
+                        <AnimatePresence mode="wait">
+                            <motion.img
+                            key={visibleIndex}
+                            src={images[visibleIndex]}
+                            alt={`Slide ${visibleIndex}`}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="w-full h-full object-cover"
+                            />
+                        </AnimatePresence>
                    </div>
 
-                    <div className="w-full block sm:hidden">
+                    <div className="w-[400px] mx-auto block sm:hidden">
                         <div className="flex flex-col gap-y-3 items-start px-7">
                             <h5 className=" font-causten font-bold sm:font-medium text-orange sm:text-[28px] text-[40px] sm:leading-[71px] leading-[43px] w-[250px] sm:w-[592px]">Stories of <span className="font-aelyn !font-light text-brown text-[36px]">community & continuity</span></h5>
                             <p className="font-causten font-normal sm:text-[24px] text-[16px] text-black sm:w-[597px] w-[250px] ">This space, rich with history, has embraced generations—your grandparents once studied here, and today, Ruh’lers carry forward the legacy of love and discovery.</p>
@@ -624,12 +615,12 @@ function Home (){
             </div>
 
 
-            {/*Founder's Note */}
-            <div className="max-w-[992px] mx-auto mt-16 sm:my-52" data-aos= "fade-up">
+            {/*Co-Founder's Note */}
+            <div className="max-w-[992px] mx-auto mt-16 sm:my-52 overflow-x-hidden" data-aos= "fade-up">
                 <div className="flex flex-row items-center relative flex-wrap">
-                    <img src={cofounder_image} alt="'Co-Founder'-Image" className="w-[320px] h-[516px] mx-auto sm:mx-0  mt-[-40px] sm:mt-0 sm:w-[576px] sm:h-fit z-10 order-2 sm:order-1"/>
+                    <img src={cofounder_image} alt="'Co-Founder'-Image" className=" w-[320px] h-[516px] mx-auto sm:mx-0  mt-[-40px] sm:mt-0 sm:w-[576px] sm:h-fit z-10 order-2 sm:order-1"/>
 
-                    <div className="bg-brown flex flex-col sm:px-16 sm:py-20 py-3 px-7 w-[361px] h-[424px] mx-auto sm:w-[502px] sm:h-[602px] order-1 sm:order-2 sm:absolute right-[-50px] z-0">
+                    <div className="bg-brown flex flex-col sm:px-16 sm:py-20 py-3 px-5 w-[361px] overflow-hidden h-[424px] mx-auto sm:w-[502px] sm:h-[602px] order-1 sm:order-2 sm:absolute right-[-50px] z-0">
                         <h2 className="font-hugme sm:font-aelyn sm:text-[40px] text-[28px] font-extrabold text-offwhite sm:font-normal leading-[71px]">Co-Founder's Note</h2>
 
                         <p className="font-causten text-[16px] leading-[23px] w-[297px] sm:text-[24px] font-normal sm:leading-[33px] sm:w-[362px] text-offwhite mt-5">“At Ruh Continuum School, we understand that education is not a one-size-fits-all process. We strive to unlock each child's potential by fostering an environment that encourages curiosity, values individuality, and prepares them for the ever-evolving world.”</p>
@@ -646,7 +637,7 @@ function Home (){
              <div className="max-w-screen-xl mx-auto mt-16 block sm:hidden" data-aos= "fade-up">
                 <div className="flex flex-col items-center">
                     <h1 className="font-causten font-bold text-[24px] leading-[24px] sm:text-[64px] sm:leading-[84px] text-green">Every space tells a story</h1>
-                    <p className="font-causten font-normal text-[16px] leading-[23px] w-[331px] sm:text-[24px] sm:leading-[33px] text-black sm:w-[677px] text-center mt-5">Our intentionally designed campus nurtures creativity, curiosity, and growth that empowers young minds to explore their fullest potential. Join us for a tour and see how we’ve redefined learning environments!</p>
+                    <p className="font-causten font-normal text-[16px] leading-[23px] w-[331px] sm:text-[24px] sm:leading-[33px] text-black sm:w-[675px] text-center mt-5">Our intentionally designed campus nurtures creativity, curiosity, and growth that empowers young minds to explore their fullest potential. Join us for a tour and see how we’ve redefined learning environments!</p>
 
                     <Link to ="/contact"><button className="w-[188px] h-[48px] sm:w-[265px] sm:h-[72px] bg-brown text-white font-causten text-[20px] leading-[20px] sm:text-[24px] sm:leading-[24px] font-bold rounded-[16px] mt-7 sm:mt-12">Book campus tour</button></Link>
                 </div>
@@ -667,7 +658,7 @@ function Home (){
                     <img src={open_ended} alt="animation_elements" className="w-[98.42px] h-[31.68px] sm:w-[320px] sm:h-[103px] absolute left-0 top-[40%]"/>
                     <img src={play_based} alt="animation_elements" className="w-[98.42px] h-[31.68px] sm:w-[320px] sm:h-[103px] absolute right-0 top-[50%] "/>
                     <img src={mindful_orange} alt="animation_elements" className="w-[98.42px] h-[31.68px] sm:w-[320px] sm:h-[103px] absolute left-[30%] top-[60%] "/>
-                    <img src={mindful_yellow} alt="animation_elements" className="w-[98.42px] h-[31.68px] sm:w-[320px] sm:h-[103px] absolute left-[70%] top-[70%] "/>
+                    <img src={community} alt="animation_elements" className="w-[98.42px] h-[31.68px] sm:w-[320px] sm:h-[103px] absolute left-[70%] top-[70%] "/>
                     <img src={global_learning} alt="animation_elements" className="w-[98.42px] h-[31.68px] sm:w-[320px] sm:h-[103px] absolute left-[10%] top-[80%] "/>
                 </motion.div>
 
@@ -682,7 +673,7 @@ function Home (){
                     <img src={open_ended} alt="animation_elements" className="w-[98.42px] h-[31.68px] sm:w-[320px] sm:h-[103px] absolute left-0 top-[40%]"/>
                     <img src={play_based} alt="animation_elements" className="w-[98.42px] h-[31.68px] sm:w-[320px] sm:h-[103px] absolute right-0 top-[50%] "/>
                     <img src={mindful_orange} alt="animation_elements" className="w-[98.42px] h-[31.68px] sm:w-[320px] sm:h-[103px] absolute left-[30%] top-[60%] "/>
-                    <img src={mindful_yellow} alt="animation_elements" className="w-[98.42px] h-[31.68px] sm:w-[320px] sm:h-[103px] absolute left-[70%] top-[70%] "/>
+                    <img src={community} alt="animation_elements" className="w-[98.42px] h-[31.68px] sm:w-[320px] sm:h-[103px] absolute left-[70%] top-[70%] "/>
                     <img src={global_learning} alt="animation_elements" className="w-[98.42px] h-[31.68px] sm:w-[320px] sm:h-[103px] absolute left-[10%] top-[80%] "/>
                 </motion.div>
 
@@ -692,7 +683,7 @@ function Home (){
             <div className="max-w-screen-xl mx-auto mt-16 sm:block hidden" data-aos="fade-up">
                 <div className="flex flex-col items-center">
                     <h1 className="font-causten font-bold text-[64px] leading-[84px] text-green">Every space tells a story</h1>
-                    <p className="font-causten font-normal text-[24px] leading-[33px] text-black w-[677px] text-center mt-5">Our intentionally designed campus nurtures creativity, curiosity, and growth that empowers young minds to explore their fullest potential. Join us for a tour and see how we’ve redefined learning environments!</p>
+                    <p className="font-causten font-normal text-[24px] leading-[33px] text-black w-[650px] text-center mt-5">Our intentionally designed campus nurtures creativity, curiosity, and growth that empowers young minds to explore their fullest potential. Join us for a tour and see how we’ve redefined learning environments!</p>
 
                     <Link to = "/contact"><button className="w-[265px] h-[72px] bg-brown text-white font-causten text-[24px] leading-[24px] font-bold rounded-[16px] mt-12">Book campus tour</button></Link>
                 </div>
@@ -743,8 +734,8 @@ function Home (){
 
             {/* SSVM Institution Section */}
             <div className="bg-orange" data-aos="fade-up">
-                <div className="max-w-screen-xl mx-auto px-5 pt-12 sm:px-20 sm:pt-44 pb-32  ">
-                    <div className="flex flex-row flex-wrap items-start justify-between ">
+                <div className="max-w-screen-xl mx-auto px-5 pt-12 sm:px-7 xl:px-20 sm:pt-44 pb-32  ">
+                    <div className="flex flex-row flex-wrap justify-center items-start sm:justify-between ">
                         <div>
                             <img src={ssvm_logo} alt="SSVM-Logo" className="sm:w-[508px] sm:h-[196px] w-[266px] h-[102px] mx-auto sm:mx-0" />
 
@@ -791,6 +782,9 @@ function Home (){
                         300: {
                             slidesPerView : 2,
                         },
+                        500: {
+                            slidesPerView:3,
+                        },
                         780: {
                             slidesPerView: 5
                         },
@@ -812,11 +806,11 @@ function Home (){
             </div>
 
             {/* Co-Founder Note */}
-            <div className="max-w-[992px] mx-auto sm:my-52 my-7" data-aos="fade-up">
+            <div className="max-w-[992px] mx-auto sm:my-52 my-7 " data-aos="fade-up">
                 <div className="flex flex-row items-center relative md:flex-nowrap flex-wrap">
                     
-                    <div className="bg-brown flex flex-col sm:px-16 sm:py-20 py-3 px-7  w-[361px] h-[424px] sm:w-[520px] sm:h-[602px] mx-auto sm:mx-0  z-0">
-                        <h2 className="font-hugme sm:font-aelyn text-[32px] sm:text-[40px] text-offwhite font-normal leading-[71px]">Co-Founder's Note</h2>
+                    <div className="bg-brown flex flex-col sm:px-16 sm:py-20 py-3 px-5 w-[361px] overflow-hidden h-[424px] sm:w-[520px] sm:h-[602px] mx-auto sm:mx-0  z-0">
+                        <h2 className="font-hugme sm:font-aelyn text-[30px] sm:text-[40px] text-offwhite font-normal leading-[71px]">Co-Founder's Note</h2>
 
                         <p className="font-causten text-[16px] leading-[23px] sm:text-[24px] font-normal sm:leading-[33px] sm:w-[362px] w-[297px] text-offwhite mt-5">“Education is an ever-evolving field, and as an academician, I believe in constantly adapting to this rapidly changing world. The world of education has undergone many changes in the last decade.”</p>
 
@@ -833,20 +827,7 @@ function Home (){
 
             </div>
 
-            {/* Friends of RUH */}
-            <div className="bg-green py-9 sm:py-20 " data-aos="fade-up">
-                <div className="max-w-screen-xl mx-auto">
-                    <h1 className="font-aelyn text-offwhite text-[50px] text-center leading-[60px] block sm:hidden "><span className="font-bold">Friends <br /> of</span> RUH</h1>
-                    <h1 className="font-aelyn text-offwhite text-[50px] text-center leading-[60px] hidden sm:block "><span className="font-bold">Friends  of</span> RUH</h1>
-                    <div className="flex flex-row items-center gap-x-5 gap-y-5 justify-center mt-7 flex-wrap">
-                        <img src={friends_has} alt="Humane_Animal_Society_Logo" className="w-[93px] h-[93px] sm:w-[173px] sm:h-[173px]"/>
-                        <img src={friends_doc} alt="Dogs_of_Coimbatore_Logo" className="w-[93px] h-[93px] sm:w-[173px] sm:h-[173px]"/>
-                        <img src={friends_spacekids} alt="SpaceKids_Logo" className="w-[93px] h-[93px] sm:w-[173px] sm:h-[173px]"/>
-                        <img src={friends_yuva} alt="Yuva_Logo" className="w-[93px] h-[93px] sm:w-[173px] sm:h-[173px]"/>
-                        <img src={friends_raack} alt="RAACK_Logo" className="w-[93px] h-[93px] sm:w-[173px] sm:h-[173px]"/>
-                    </div>
-                </div>
-            </div>
+            <Friends />
 
             <div className="py-20  swiper-membership" data-aos="fade-up">
                 <h3 className="font-causten text-[24px] font-bold leading-[54px] text-orange text-center uppercase">Our Seal of Trust</h3>
@@ -1105,50 +1086,50 @@ function Home (){
             </div>
 
             {/* Ruh'lington Post */}
-            <div className="max-w-screen-xl mx-auto py-12 sm:p-28" data-aos="fade-up">
-                <div className="flex flex-col sm:flex-row  gap-x-12 gap-y-16 sm:gap-y-0 ">
+            <div className="max-w-screen-xl mx-auto py-12 sm:px-5 sm:py-24  xl:p-24 " data-aos="fade-up">
+                <div className="flex flex-col sm:flex-row sm:gap-x-5 xl:gap-x-12 gap-y-16 sm:gap-y-0 ">
                     <div className="flex flex-col sm:items-start items-center sm:flex-none">
                         <h1 className="font-causten font-bold text-[32px] sm:text-[40px] leading-[44px] tracking-[-2%] text-green ">The Ruh'lington Post</h1>
 
-                        <p className="font-causten text-[16px] sm:text-[20px] font-normal leading-[23px] sm:leading-[30px] text-black w-[357px] sm:w-[394px] mt-3 text-center sm:text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p className="font-causten text-[16px] sm:text-[20px] font-normal leading-[23px] sm:leading-[30px] text-black w-[357px] sm:w-[394px] mt-3 text-center sm:text-left">Explore perspectives, reflections, and learning adventures from Ruh'lers. The Ruh’lington Post is your gateway to engaging stories, academic insights, and campus highlights.</p>
 
                         <button className="w-[175px] h-[48px] sm:w-[265px] sm:h-[72px] bg-brown text-white font-causten text-[20px] leading-[20px] sm:text-[24px] sm:leading-[24px] font-bold rounded-[8px] sm:rounded-[16px] mt-9 ">View all posts</button>
                     </div>
 
                     <div className="flex flex-col gap-y-16">
-                        <div className="flex flex-col gap-y-5 sm:gap-y-0 sm:flex-row gap-x-5 px-3 max-w-[582px]">
+                        <div className="flex flex-col gap-y-5 sm:gap-y-0 sm:flex-row gap-x-5 px-3 max-w-[650px]">
                             <img src={post_image_1} alt="post_image_1" className="w-full h-[240px] object-cover sm:w-[279px] sm:h-[240px] rounded-[16px]" />
                             
                             <div>
-                                <h5 className="font-causten font-semibold text-[14px] text-brown ">Care tips</h5>
+                                {/* <h5 className="font-causten font-semibold text-[14px] text-brown ">Care tips</h5> */}
 
-                                <div className="flex flex-row gap-x-5 items-start mt-3">
-                                    <h1 className="font-causten text-[24px] font-bold leading-[32px] text-black w-[357px] sm:w-[239px]">Why is play-based learning essential for young learners?</h1>
-                                    <img src={arrow_up_right} alt="arrow-up-right" className="w-[24px] h-[24px] cursor-pointer" />
+                                <div className="flex flex-row justify-between items-start mt-3">
+                                    <h1 className="font-causten text-[24px] font-bold leading-[32px] text-black w-[357px] sm:w-[239px]">Exploring the Deep Blue</h1>
+                                    <Link to = "/blog/1"><img src={arrow_up_right} alt = "arrow-up-right" className = "w-[24px] h-[24px] cursor-pointer" /> </Link>
                                 </div>
 
-                                <p className="font-causten text-[16px] font-normal leading-[24px] mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
-                                <p className="font-causten text-[14px] font-semibold leading-[20px] text-black mt-4">Vineeth</p>
-                                <p className="font-causten text-[14px] font-light leading-[20px] text-black ">20 Jan 2024</p>
+                                <p className="font-causten text-[16px] font-normal leading-[24px] mt-3">Inspired by a song, learners explored marine life through art. They painted a blue ocean, crafted sea creatures with natural materials, and highlighted pollution using plastic waste. The canvas became a creative reflection of their inquiry, blending art, learning, and environmental awareness.</p>
+                                {/* <p className="font-causten text-[14px] font-semibold leading-[20px] text-black mt-4">Vineeth</p>
+                                <p className="font-causten text-[14px] font-light leading-[20px] text-black ">20 Jan 2024</p> */}
                             </div>
 
                         </div>
 
-                        <div className="flex flex-col gap-y-5 sm:gap-y-0 px-3 sm:flex-row gap-x-5 max-w-[582px]">
+                        <div className="flex flex-col gap-y-5 sm:gap-y-0 px-3 sm:flex-row gap-x-5 max-w-[650px]">
                             <img src={post_image_2} alt="post_image_2" className="w-full object-cover sm:w-[279px] h-[240px] rounded-[16px]" />
                             
                             
                             <div>
-                                <h5 className="font-causten font-semibold text-[14px] text-brown ">Care tips</h5>
+                                {/* <h5 className="font-causten font-semibold text-[14px] text-brown ">Care tips</h5> */}
 
-                                <div className="flex flex-row gap-x-5 items-start mt-3">
-                                    <h1 className="font-causten text-[24px] font-bold leading-[32px] text-black w-[357px] sm:w-[239px]">How does Ruh support global learning</h1>
-                                    <img src={arrow_up_right} alt="arrow-up-right" className="w-[24px] h-[24px] cursor-pointer" />
+                                <div className="flex flex-row justify-between items-start mt-3">
+                                    <h1 className="font-causten text-[24px] font-bold leading-[32px] text-black w-[357px] sm:w-[239px]">Protecting Our Oceans: Little Ruhlers Take Action for Sea Turtles</h1>
+                                    <Link to = "/blog/2"><img src={arrow_up_right} alt="arrow-up-right" className="w-[24px] h-[24px] cursor-pointer" /></Link>
                                 </div>
 
-                                <p className="font-causten text-[16px] font-normal leading-[24px] mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
-                                <p className="font-causten text-[14px] font-semibold leading-[20px] text-black mt-4">Sahana</p>
-                                <p className="font-causten text-[14px] font-light leading-[20px] text-black ">20 Jan 2024</p>
+                                <p className="font-causten text-[16px] font-normal leading-[24px] mt-3">Little Ruhlers explored ocean pollution's impact on sea turtles through a hands-on project, creating a model with recycled materials to raise awareness about marine conservation.</p>
+                                {/* <p className="font-causten text-[14px] font-semibold leading-[20px] text-black mt-4">Sahana</p> */}
+                                {/* <p className="font-causten text-[14px] font-light leading-[20px] text-black ">20 Jan 2024</p> */}
                             </div>
 
                         </div>
@@ -1157,52 +1138,35 @@ function Home (){
                 </div>
             </div>
 
-            {/* Curious to know more section  */}
-            <div className="bg-orange px-5 py-12 sm:p-20 h-[621px] mb-24 sm:mb-0" data-aos="fade-up">
-                <div className="max-w-screen-xl mx-auto relative">
-                    <div className="flex flex-col items-center sm:items-start sm:flex-row sm:justify-end">
-                        <img src={curious_section_image} alt="2_child_image" className="w-[333.57px] h-[329px] mt-5 sm:mt-0 sm:w-[543px] sm:h-[536px] sm:absolute sm:left-[80px] sm:top-[90px] order-2 sm:order-1 " />
-
-                        <div className="flex flex-col sm:items-start items-center sm:flex-none text-offwhite order-1 sm:order-2">
-                            <h1 className="font-causten  text-[36px] leading-[45px] mx-auto sm:mx-0  sm:text-left text-center w-[250px]  sm:text-[64px] sm:leading-[84px] font-bold sm:w-[388px]">Curious to know more?</h1>
-                            <p className="font-causten font-normal text-[16px] leading-[23px] sm:text-[24px] sm:leading-[33px] sm:w-[458px] mt-7 text-center sm:text-left w-[322px]">From questions about admissions to understanding our approach to learning, we’re here to help. Let’s connect and talk about your Ruh’ler’s path to success.</p>
-
-                            <Link to = "/contact"><button className="w-[250px] h-[48px] sm:w-[322px] sm:h-[72px] bg-offwhite text-brown font-causten text-[20px] sm:text-[24px] leading-[20px] sm:leading-[24px] font-bold rounded-[8px] sm:rounded-[16px] mt-9 ">Contact learning advisor</button></Link>
-
-
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
+            <Curioustoknowmore />
 
           
 
           
-            {/* Menu Pop-up */}
+                {/* Pop-up Menu */}
             <div className={navMenu === false ? "hidden" : "w-screen h-screen bg-green fixed left-0 top-0 z-10 overflow-hidden"}>
                 <div className="max-w-screen-xl mx-auto sm:p-20 px-9 py-7">
                     <div className="flex flex-row items-start justify-between">
-                        <img src={ruhlogo_offwhite} alt="ruhlogo-offwhite" className="sm:w-[208px] sm:h-[135px] w-[152px] h-[98px]" />
-                        <img src={close_icon} alt="close-icon" className="sm:w-[72px] w-[32px] h-[32px] sm:h-[72px]  cursor-pointer" onClick = {() => {setNavMenu(false)}}/>
+                        <img src={logo_offwhite} alt="ruhlogo-offwhite" className="sm:w-[208px] sm:h-[135px] w-[152px] h-[98px]" />
+                        <img src={close_icon} alt="close-icon" className="sm:w-[72px] w-[32px] h-[32px] sm:h-[72px]  cursor-pointer" onClick = {() => setNavMenu(false)} />
                     </div>
                     
                     <div className="flex flex-col gap-y-12 sm:flex-row sm:gap-x-36 text-offwhite mt-20">
                         <div className="flex flex-col gap-y-3">
-                            <Link to = "/underconstruction"><h5 className="font-causten font-bold text-[36px] sm:text-[48px] leading-[20px] uppercase">Home</h5></Link>
+                            <Link to = "/"><h5 className="font-causten font-bold text-[36px] sm:text-[48px] leading-[20px] uppercase">Home</h5></Link>
 
-                            <Link to = "/underconstruction"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer mt-3">about us</p></Link>
-                            <Link to = "/underconstruction"><p className="font-causten font-extralight text-[24px] leading-[24px]cursor-pointer">curriculum</p></Link>
+                            <Link to = "/about"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer mt-3">about us</p></Link>
+                            <Link to = "/curriculum"><p className="font-causten font-extralight text-[24px] leading-[24px]cursor-pointer">curriculum</p></Link>
                             <Link to ="/contact"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer">contact us</p></Link>
                         </div>
 
                         <div className="flex flex-col gap-y-3">
-                            <Link to = "/underconstruction"><h5 className="font-causten font-bold text-[36px] sm:text-[48px] leading-[20px] uppercase">Life @ RUH</h5></Link>
+                            <Link to = "/"><h5 className="font-causten font-bold text-[36px] sm:text-[48px] leading-[20px] uppercase">Life @ RUH</h5></Link>
 
-                            <Link to = "/underconstruction"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer mt-3">school life</p></Link>
-                            <Link to = "/underconstruction"><p className="font-causten font-extralight text-[24px] leading-[24px]cursor-pointer">sports & co-curricular</p></Link>
-                            <Link to = "/underconstruction"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer">parent's corner</p></Link>
-                            <Link to = "/underconstruction"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer">publications</p></Link>
+                            <a href = "/life@RUH"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer mt-3">school life</p></a>
+                            <a href = "/sports"><p className="font-causten font-extralight text-[24px] leading-[24px]cursor-pointer">sports & co-curricular</p></a>
+                            <a href = "/parents-corner"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer">parent's corner</p></a>
+                            {/* <Link to = "/underconstruction"><p className="font-causten font-extralight text-[24px] leading-[24px] cursor-pointer">publications</p></Link> */}
                         </div>
                     </div>
 
@@ -1217,7 +1181,7 @@ function Home (){
                         <a href="https://www.google.com" target="_blank"><img src={linkedin_icon_offwhite} alt="Linkedin-icon" className="sm:w-[44px] sm:h-[42px] w-[35px] h-[35px]" /></a>
                     </div>
                 </div>
-            </div>
+        </div>
             
 
             
