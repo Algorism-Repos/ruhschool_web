@@ -2,7 +2,6 @@ import {React, useState} from "react";
 import { Link } from "react-router-dom";
 import ruhlogo_offwhite from "../assets/images/ruhlogo_offwhite.png"
 import hamburger_menu_offwhite from "../assets/images/hamburger_menu_offwhite.png"
-
 import facebook_icon_offwhite from "../assets/images/facebook-icon-offwhite.png"
 import insta_icon_offwhite from "../assets/images/insta-icon-offwhite.png"
 import linkedin_icon_offwhite from "../assets/images/linkedin-icon-offwhite.png"

@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "formdatas",
+  "info": {
+    "singularName": "formdata",
+    "pluralName": "formdatas",
+    "displayName": "Formdata "
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "parentsName": {
+      "type": "string"
+    },
+    "learnersName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "grade": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    }
+  }
+}

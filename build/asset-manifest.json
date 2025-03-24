@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f777f536.css",
-    "main.js": "/static/js/main.007c281a.js",
+    "main.css": "/static/css/main.bfdf0a92.css",
+    "main.js": "/static/js/main.88371641.js",
     "static/js/488.12ce6193.chunk.js": "/static/js/488.12ce6193.chunk.js",
     "static/media/animation_bg.png": "/static/media/animation_bg.b3c97f4bf7af72b8ae24.png",
     "static/media/curious_section_image.png": "/static/media/curious_section_image.ce143819ba511f16f6be.png",
@@ -63,14 +63,14 @@
     "static/media/cambridgeassesment_logo.jpg": "/static/media/cambridgeassesment_logo.b591ce1df92beb3edd42.jpg",
     "static/media/ruh_racecourse.png": "/static/media/ruh_racecourse.f3a9baaf37bd7ba1ea17.png",
     "static/media/friends_doc.png": "/static/media/friends_doc.4a55f08cef5513b23587.png",
-    "static/media/Intuitive_path.svg": "/static/media/Intuitive_path.01924e87596f2b8a47d61e6c292e33c3.svg",
+    "static/media/Intuitive_path.svg": "/static/media/Intuitive_path.3b408875f70d62062f0f5fee2312d19a.svg",
     "index.html": "/index.html",
-    "main.f777f536.css.map": "/static/css/main.f777f536.css.map",
-    "main.007c281a.js.map": "/static/js/main.007c281a.js.map",
+    "main.bfdf0a92.css.map": "/static/css/main.bfdf0a92.css.map",
+    "main.88371641.js.map": "/static/js/main.88371641.js.map",
     "488.12ce6193.chunk.js.map": "/static/js/488.12ce6193.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f777f536.css",
-    "static/js/main.007c281a.js"
+    "static/css/main.bfdf0a92.css",
+    "static/js/main.88371641.js"
   ]
 }

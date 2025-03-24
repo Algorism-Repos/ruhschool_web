@@ -7,8 +7,10 @@ import Footer from "./Components/Footer"
 import ComingSoon from "./Pages/ComingSoon";
 import ScrollTop from "./Components/ScrollTop";
 
-
 function App() {
+
+
+  
   return (
     <>
       <ScrollTop />

@@ -94,11 +94,15 @@ import visual from "../assets/images/home/visual.png"
 import listening from "../assets/images/home/listening.png"
 import kinaesthetic from "../assets/images/home/kinaesthetic.png"
 import intuitive_path from "../assets/images/home/animation-elements/Intuitive_path.svg"
+import useFetch from "../hooks/useFtech"
+
 
 
 
 
 function Home (){
+    const {loading,error,data}=useFetch('http://localhost:1337/api/blogs')
+    console.log(data)
 
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(MotionPathPlugin);
