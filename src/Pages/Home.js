@@ -89,23 +89,11 @@ import kid_image_without from "../assets/images/home/kid_image_without.png"
 import visual from "../assets/images/home/visual.png"
 import listening from "../assets/images/home/listening.png"
 import kinaesthetic from "../assets/images/home/kinaesthetic.png"
-<<<<<<< HEAD
-import intuitive_path from "../assets/images/home/animation-elements/Intuitive_path.svg"
-import useFetch from "../hooks/useFtech"
-
-=======
-
 import Navbar from "../Components/Navbar";
 import Friends from "../Components/Friends";
 import Curioustoknowmore from "../Components/Curioustoknowmore";
->>>>>>> a644682312d091ba8a6cb65292b60dbc76781873
-
-
-
-
 function Home (){
-    const {loading,error,data}=useFetch('http://localhost:1337/api/blogs')
-    console.log(data)
+  
 
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(MotionPathPlugin);
@@ -1100,8 +1088,7 @@ function Home (){
                         <h1 className="font-causten font-bold text-[32px] sm:text-[40px] leading-[44px] tracking-[-2%] text-green ">The Ruh'lington Post</h1>
 
                         <p className="font-causten text-[16px] sm:text-[20px] font-normal leading-[23px] sm:leading-[30px] text-black w-[357px] sm:w-[394px] mt-3 text-center sm:text-left">Explore perspectives, reflections, and learning adventures from Ruh'lers. The Ruh’lington Post is your gateway to engaging stories, academic insights, and campus highlights.</p>
-
-                        <button className="w-[175px] h-[48px] sm:w-[265px] sm:h-[72px] bg-brown text-white font-causten text-[20px] leading-[20px] sm:text-[24px] sm:leading-[24px] font-bold rounded-[8px] sm:rounded-[16px] mt-9 ">View all posts</button>
+                        <Link to = "/life@RUH"> <button className="w-[175px] h-[48px] sm:w-[265px] sm:h-[72px] bg-brown text-white font-causten text-[20px] leading-[20px] sm:text-[24px] sm:leading-[24px] font-bold rounded-[8px] sm:rounded-[16px] mt-9 ">View all posts</button></Link>
                     </div>
 
                     <div className="flex flex-col gap-y-16">

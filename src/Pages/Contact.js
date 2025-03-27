@@ -34,6 +34,7 @@ function Contact (){
 
   const [formValues, setformValues] = useState(initialValues);
   const [formErrors, setformErrors] = useState({});
+  console.log("contact page")
 
   const handleChange = (e) =>{
     const {name, value} = e.target; 

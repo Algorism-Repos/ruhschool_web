@@ -6,58 +6,63 @@ import ScrollTop from "../Components/ScrollTop"
 import banner_1 from "../assets/images/blog_banner_1.png"
 import banner_2 from "../assets/images/blog_banner_2.png"
 import Curioustoknowmore from "../Components/Curioustoknowmore";
-
+import useFetch from "../hooks/useFtech"
 function Blog (){
-
+    const {loading,error,data}=useFetch('http://localhost:1337/api/blogs?populate=*')
+    const blogData = data?.data?.find((blog) => blog.id === 4);
     function scrollTop (){
         window.scrollTo (0,0);
     }
-
     const location = useLocation();
     const pathname = location.pathname.slice(1);
     
     return(
         <>
             <Navbar />
-
-            <h1 className={pathname === "blog/1" || pathname === "blog/2" ? "font-causten font-bold text-[32px] sm:text-[60px] leading-[44px]  text-green text-center mt-5 " :"hidden"}>The Ruh'lington Post</h1>
+         {blogData ? (
+            <>
+            <h1 className={pathname === "blog/1" || pathname === "blog/2" ? "font-causten font-bold text-[32px] sm:text-[60px] leading-[44px]  text-green text-center mt-5 " :"hidden"}>{blogData.heading}</h1>
 
             <div className={pathname === "blog/1" ? "block" : "hidden"}>
 
                 {/* Heading Section */}
                 <div className="max-w-screen-xl w-full sm:w-[800px] mx-auto my-20">
-                    <h1 className = "font-causten text-brown text-[32px] sm:text-[64px] text-center font-semibold">Exploring the Deep Blue</h1>
-                    <h4 className="font-causten text-center text-[16px] sm:text-[24px] ">Discover how learners at Ruh Continuum Primary Campus in Coimbatore explored ocean life through creativity, nature walks, and collaborative art, all part of a global learning approach.</h4>
+                    <h1 className = "font-causten text-brown text-[32px] sm:text-[64px] text-center font-semibold">{blogData.subHeading}</h1>
+                    <h4 className="font-causten text-center text-[16px] sm:text-[24px] ">{blogData.paragraph}</h4>
                 </div>
 
-                <img src={banner_1} alt="banner-image" className="w-full object-cover h-[30vh] sm:h-[80vh]" />
+                <img src={`http://localhost:1337${blogData.image[0].url}`} alt="banner-image" className="w-full object-cover h-[30vh] sm:h-[80vh]" />
 
                 <div className="flex flex-col gap-y-7 px-5 lg:px-32 mt-20 ">
-                    <p className="blog-para">Dive in the deep blue sea, come and take a dive with me.”</p>
-                    <p className="blog-para">What started as a simple song soon unfolded into an inspiring learning experience for our young explorers at Ruh Continuum Primary Campus. As they sang along, their imaginations drifted into the depths of the ocean, naming sea creatures and plants, and before long, the idea to bring this underwater world to life on canvas was born.</p>
+                    <p className="blog-para">{blogData.imageContent}</p>
+                    {/* <p className="blog-para">{blogData.contentHeading}</p> */}
 
-                    <h4 className="blog-heading">Learning Beyond the Classroom</h4>
+                    <h4 className="blog-heading">{blogData.contentHeading}</h4>
 
-                    <p className="blog-para">At Ruh, we believe meaningful education happens when curiosity leads the way. As part of our commitment to offering a well-rounded learning experience, our learners set out on a nature walk around campus, gathering leaves, twigs, dried flowers, stones, and pebbles—materials that would soon shape their very own ocean ecosystem.</p>
+                    <p className="blog-para"> {blogData.content[0].children[0].text}</p>
 
-                    <p className="blog-para">Back in the classroom, an afternoon was dedicated to transforming the blank canvas into shimmering waters. With brushstrokes in varying shades of blue and the use of different painting tools, this session became more than just an art activity. It was an opportunity to develop fine motor skills, experiment with textures, and collaborate as a team—all of which are key elements of our learning environment here at Ruh, where global ideas meet hands-on exploration in the heart of Coimbatore.                    </p>
+                    {/* <p className="blog-para"> {blogData.content[1].children[0].text}</p> */}
 
-                    <h4 className="blog-heading">Creating stories from Nature</h4>
+                    <h4 className="blog-heading">{blogData.content[1].children[0].text}</h4>
 
-                    <p className="blog-para">The next stage of our project brought even more creativity to the surface. Using their gathered materials, the learners designed sea creatures and ocean plants—from water snakes and seaweed to electric eels and octopuses. Pencil shavings added delicate details, while plastic scraps served as a reminder of the impact of pollution on marine life.</p>
+                    <p className="blog-para">{ blogData.content[2].children[0].text} </p>
+                    {/* <p className="blog-para">blogData.content[1].children[0].text</p> */}
 
-                    <p className="blog-para">As the canvas filled with tortoises’ homes, glass bottles, and an ominous “plastic monster,” thoughtful conversations emerged about the importance of protecting our planet. Projects like these give our learners a chance to see the world differently, combining creativity with awareness—an approach we’re proud to nurture as part of our globally minded curriculum.</p>
+                    <h4 className="blog-heading">{blogData.content[3].children[0].text}</h4>
 
-                    <h4 className="blog-heading">More than Just a Canvas</h4>
+                    <p className="blog-para">{blogData.content[4].children[0].text}</p>
 
-                    <p className="blog-para">For our learners, this wasn’t just about art. It was about discovery. It was about thinking deeper, working together, and understanding how their ideas can shape meaningful stories. These are the kinds of moments that define our approach at Ruh—where a primary education is built not only on academics but on developing the confidence and curiosity to explore.</p>
-
-                    <p className="blog-para">By creating learning spaces that reflect the values of international education and encouraging children to engage with the world around them, Ruh Continuum Primary Campus has become a place where young minds grow, right here in Coimbatore.</p>
+                    {/* <p className="blog-para">By creating learning spaces that reflect the values of international education and encouraging children to engage with the world around them, Ruh Continuum Primary Campus has become a place where young minds grow, right here in Coimbatore.</p> */}
                 </div>
-
             </div>
-
-            <div className={pathname === "blog/2" ? "block" : "hidden"}>
+            </>
+         ):(
+            <p className="text-center text-gray-500">Loading...</p>
+  
+         )}
+        
+             
+            {/* <div className={pathname === "blog/2" ? "block" : "hidden"}>
 
                 <div className="max-w-screen-xl w-full sm:w-[800px] mx-auto my-20">
                     <h1 className = "font-causten text-brown text-[20px] sm:text-[40px] leading-[30px] sm:leading-[48px] text-center font-semibold mb-3">Ocean Pollution Through a Child’s Eyes: A Creative Take from Ruh Continuum School</h1>
@@ -94,7 +99,7 @@ function Blog (){
             <div className="bg-green w-full flex flex-row items-center justify-between h-[70px] px-5 mt-16">
                 <Link to = {pathname === "blog/1" ? "/blog/2" : "/blog/1"}><button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Previous</button></Link>
                 <Link to = {pathname === "blog/1" ? "/blog/2" : "/blog/1"}><button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Next</button></Link>
-            </div>
+            </div> */}
 
 
             <Curioustoknowmore />

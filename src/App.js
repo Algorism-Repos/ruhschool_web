@@ -31,6 +31,8 @@ function App() {
         <Route path="/contact" element= {<Contact />} />
         <Route path= "/underconstruction" element = {<ComingSoon />}/>
         <Route path = "/blog/:id" element = {<Blogs />} />
+        {/* <Route path = "/schoollife" element = {<Blogs />} /> */}
+        
       </Routes>
       <Footer/>
     </>

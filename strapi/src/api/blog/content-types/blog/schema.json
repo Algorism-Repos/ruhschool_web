@@ -13,8 +13,24 @@
     "heading": {
       "type": "string"
     },
-    "content": {
+    "subHeading": {
       "type": "text"
+    },
+    "paragraph": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "content": {
+      "type": "blocks"
     }
   }
 }
