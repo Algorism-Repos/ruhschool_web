@@ -1,68 +1,121 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Navbar from "../Components/Navbar";
-import ScrollTop from "../Components/ScrollTop"
+import ScrollTop from "../Components/ScrollTop";
 
-import banner_1 from "../assets/images/blog_banner_1.png"
-import banner_2 from "../assets/images/blog_banner_2.png"
+import banner_1 from "../assets/images/blog_banner_1.png";
+import banner_2 from "../assets/images/blog_banner_2.png";
 import Curioustoknowmore from "../Components/Curioustoknowmore";
-import useFetch from "../hooks/useFtech"
-function Blog (){
-    const {loading,error,data}=useFetch('http://localhost:1337/api/blogs?populate=*')
-    const blogData = data?.data?.find((blog) => blog.id === 4);
-    function scrollTop (){
-        window.scrollTo (0,0);
-    }
-    const location = useLocation();
-    const pathname = location.pathname.slice(1);
-    
-    return(
+import useFetch from "../hooks/useFtech";
+function Blog() {
+  const [pathId, setPathId] = useState(null);
+  const location = useLocation();
+
+  const pathname = location.pathname.slice(1);
+  function scrollTop() {
+    window.scrollTo(0, 0);
+  }
+  useEffect(() => {
+    const id = location.pathname.slice(6); // Extract ID from pathname
+    setPathId(id);
+  }, [location.pathname]);
+
+  const { loading, error, data } = useFetch(
+    "http://localhost:1337/api/blogs?populate=*"
+  );
+  const blogData = data?.data?.find(
+    (blog) => blog.blogId?.toString() === pathId
+  );
+  console.log("----",blogData);
+  return (
+    <>
+      <Navbar />
+      {blogData ? (
         <>
-            <Navbar />
-         {blogData ? (
-            <>
-            <h1 className={pathname === "blog/1" || pathname === "blog/2" ? "font-causten font-bold text-[32px] sm:text-[60px] leading-[44px]  text-green text-center mt-5 " :"hidden"}>{blogData.heading}</h1>
+          {/* <h1 className={pathname === "blog/1" || pathname === "blog/2" ? "font-causten font-bold text-[32px] sm:text-[60px] leading-[44px]  text-green text-center mt-5 " :"hidden"}>{blogData.heading}</h1> */}
+          <h1
+            className={
+              pathname === "blog/1" ||
+              pathname === "blog/2" ||
+              pathname === "blog/3"
+                ? "font-causten font-bold text-[32px] sm:text-[60px] leading-[44px]  text-green text-center mt-5 "
+                : "hidden"
+            }
+          >
+            {blogData.heading}
+          </h1>
 
-            <div className={pathname === "blog/1" ? "block" : "hidden"}>
+          {/* <div className={pathname === "blog/1" ? "block" : "hidden"}> */}
 
-                {/* Heading Section */}
-                <div className="max-w-screen-xl w-full sm:w-[800px] mx-auto my-20">
-                    <h1 className = "font-causten text-brown text-[32px] sm:text-[64px] text-center font-semibold">{blogData.subHeading}</h1>
-                    <h4 className="font-causten text-center text-[16px] sm:text-[24px] ">{blogData.paragraph}</h4>
-                </div>
+          {/* Heading Section */}
+          <div className="max-w-screen-xl w-full sm:w-[800px] mx-auto my-20">
+            <h1 className="font-causten text-brown text-[32px] sm:text-[64px] text-center font-semibold">
+              {blogData.subHeading}
+            </h1>
+            <h4 className="font-causten text-center text-[16px] sm:text-[24px] ">
+              {blogData.paragraph}
+            </h4>
+          </div>
 
-                <img src={`http://localhost:1337${blogData.image[0].url}`} alt="banner-image" className="w-full object-cover h-[30vh] sm:h-[80vh]" />
+          <img
+            src={`http://localhost:1337${blogData.image[0].url}`}
+            alt="banner-image"
+            className="w-full object-cover h-[30vh] sm:h-[80vh]"
+          />
 
-                <div className="flex flex-col gap-y-7 px-5 lg:px-32 mt-20 ">
-                    <p className="blog-para">{blogData.imageContent}</p>
-                    {/* <p className="blog-para">{blogData.contentHeading}</p> */}
+          <div className="flex flex-col gap-y-7 px-5 lg:px-32 mt-20 ">
+            <p className="blog-para">{blogData.imageContent}</p>
 
-                    <h4 className="blog-heading">{blogData.contentHeading}</h4>
+            {blogData.content.map((block, index) => {
+              const text =
+                block.children?.map((child) => child.text).join("") || "";
 
-                    <p className="blog-para"> {blogData.content[0].children[0].text}</p>
+              if (block.type === "heading") {
+                return (
+                  <h4 key={index} className="blog-heading">
+                    {text}
+                  </h4>
+                );
+              }
 
-                    {/* <p className="blog-para"> {blogData.content[1].children[0].text}</p> */}
+              if (block.type === "paragraph") {
+                return (
+                  <p key={index} className="blog-para">
+                    {text}
+                  </p>
+                );
+              }
 
-                    <h4 className="blog-heading">{blogData.content[1].children[0].text}</h4>
+              return null; // fallback if block type is something else
+            })}
 
-                    <p className="blog-para">{ blogData.content[2].children[0].text} </p>
-                    {/* <p className="blog-para">blogData.content[1].children[0].text</p> */}
+            {/* <p className="blog-para">{blogData.contentHeading}</p> */}
 
-                    <h4 className="blog-heading">{blogData.content[3].children[0].text}</h4>
+            {/* <h4 className="blog-heading">{blogData.contentHeading}</h4> */}
 
-                    <p className="blog-para">{blogData.content[4].children[0].text}</p>
+            {/* <p className="blog-para"> {blogData.content[0].children[0].text}</p> */}
 
-                    {/* <p className="blog-para">By creating learning spaces that reflect the values of international education and encouraging children to engage with the world around them, Ruh Continuum Primary Campus has become a place where young minds grow, right here in Coimbatore.</p> */}
-                </div>
-            </div>
-            </>
-         ):(
-            <p className="text-center text-gray-500">Loading...</p>
-  
-         )}
-        
-             
-            {/* <div className={pathname === "blog/2" ? "block" : "hidden"}>
+            {/* <p className="blog-para"> {blogData.content[1].children[0].text}</p> */}
+
+            {/* <h4 className="blog-heading">{blogData.content[1].children[0].text}</h4> */}
+
+            {/* <p className="blog-para">{ blogData.content[2].children[0].text} </p> */}
+            {/* <p className="blog-para">blogData.content[1].children[0].text</p> */}
+
+            {/* <h4 className="blog-heading">{blogData.content[3].children[0].text}</h4> */}
+
+            {/* <p className="blog-para">{blogData.content[4].children[0].text}</p> */}
+
+            {/* <p className="blog-para">By creating learning spaces that reflect the values of international education and encouraging children to engage with the world around them, Ruh Continuum Primary Campus has become a place where young minds grow, right here in Coimbatore.</p> */}
+          </div>
+          {/* </div> */}
+        </>
+      ) : (
+        <p className="text-center text-gray-500">Loading...</p>
+      )}
+      {/*         
+            
+             <div className={pathname === "blog/2" ? "block" : "hidden"}>
 
                 <div className="max-w-screen-xl w-full sm:w-[800px] mx-auto my-20">
                     <h1 className = "font-causten text-brown text-[20px] sm:text-[40px] leading-[30px] sm:leading-[48px] text-center font-semibold mb-3">Ocean Pollution Through a Child’s Eyes: A Creative Take from Ruh Continuum School</h1>
@@ -99,12 +152,11 @@ function Blog (){
             <div className="bg-green w-full flex flex-row items-center justify-between h-[70px] px-5 mt-16">
                 <Link to = {pathname === "blog/1" ? "/blog/2" : "/blog/1"}><button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Previous</button></Link>
                 <Link to = {pathname === "blog/1" ? "/blog/2" : "/blog/1"}><button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Next</button></Link>
-            </div> */}
+            </div>  */}
 
-
-            <Curioustoknowmore />
-        </>
-    )
+      <Curioustoknowmore />
+    </>
+  );
 }
 
 export default Blog;
