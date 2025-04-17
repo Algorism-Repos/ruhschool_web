@@ -1,12 +1,7 @@
 {
   "files": {
-<<<<<<< HEAD
-    "main.css": "/static/css/main.bfdf0a92.css",
-    "main.js": "/static/js/main.88371641.js",
-=======
-    "main.css": "/static/css/main.aa9f907b.css",
-    "main.js": "/static/js/main.5c2480be.js",
->>>>>>> a644682312d091ba8a6cb65292b60dbc76781873
+    "main.css": "/static/css/main.01b416d0.css",
+    "main.js": "/static/js/main.91dd4393.js",
     "static/js/488.12ce6193.chunk.js": "/static/js/488.12ce6193.chunk.js",
     "static/media/Weigh-Scale---Ruh.gif": "/static/media/Weigh-Scale---Ruh.dc685ce4081f33bd4ba7.gif",
     "static/media/roles-of-future.gif": "/static/media/roles-of-future.9b7117e7cb6b43c6baa0.gif",
@@ -115,25 +110,13 @@
     "static/media/cambridgeassesment_logo.jpg": "/static/media/cambridgeassesment_logo.b591ce1df92beb3edd42.jpg",
     "static/media/ruh_racecourse.png": "/static/media/ruh_racecourse.f3a9baaf37bd7ba1ea17.png",
     "static/media/friends_doc.png": "/static/media/friends_doc.4a55f08cef5513b23587.png",
-<<<<<<< HEAD
-    "static/media/Intuitive_path.svg": "/static/media/Intuitive_path.3b408875f70d62062f0f5fee2312d19a.svg",
     "index.html": "/index.html",
-    "main.bfdf0a92.css.map": "/static/css/main.bfdf0a92.css.map",
-    "main.88371641.js.map": "/static/js/main.88371641.js.map",
+    "main.01b416d0.css.map": "/static/css/main.01b416d0.css.map",
+    "main.91dd4393.js.map": "/static/js/main.91dd4393.js.map",
     "488.12ce6193.chunk.js.map": "/static/js/488.12ce6193.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bfdf0a92.css",
-    "static/js/main.88371641.js"
-=======
-    "index.html": "/index.html",
-    "main.aa9f907b.css.map": "/static/css/main.aa9f907b.css.map",
-    "main.5c2480be.js.map": "/static/js/main.5c2480be.js.map",
-    "488.12ce6193.chunk.js.map": "/static/js/488.12ce6193.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.aa9f907b.css",
-    "static/js/main.5c2480be.js"
->>>>>>> a644682312d091ba8a6cb65292b60dbc76781873
+    "static/css/main.01b416d0.css",
+    "static/js/main.91dd4393.js"
   ]
 }
