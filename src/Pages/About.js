@@ -65,11 +65,10 @@ function About (){
 
                         <div data-aos = "fade-up">
                             <img src={k5} alt="K5_campus" className="w-[352px] h-[431px] "/>
-                            <p className="font-causten text-[24px] font-normal leading-[33px] mt-9 w-[295px] mx-auto text-center ">Our K - 5 Campus offers the International Baccalaureate curriculum up to Primary Years, providing a holistic educational experience. </p>
+                            <p className="font-causten text-[24px] font-normal leading-[33px] mt-9 w-[295px] mx-auto text-center ">Our K-5 Campus offers the International Baccalaureate curriculum up to Primary Years, providing a holistic educational experience. </p>
                         </div>
                     </div>
                 </div>
-
             </div>
 
             {/* Our Campuses - Small Screen */}

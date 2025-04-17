@@ -372,7 +372,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   collectionName: 'blogs';
   info: {
-    description: '';
     displayName: 'Blogs';
     pluralName: 'blogs';
     singularName: 'blog';
@@ -386,7 +385,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    heading: Schema.Attribute.String;
+    heading: Schema.Attribute.Text;
     image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true

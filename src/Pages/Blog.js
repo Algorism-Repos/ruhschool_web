@@ -10,7 +10,6 @@ import useFetch from "../hooks/useFtech";
 function Blog() {
   const [pathId, setPathId] = useState(null);
   const location = useLocation();
-
   const pathname = location.pathname.slice(1);
   function scrollTop() {
     window.scrollTo(0, 0);
@@ -57,14 +56,17 @@ function Blog() {
             </h4>
           </div>
 
+           {blogData.image?.length > 0 && blogData.image[0]?.url && ( 
+
           <img
             src={`http://localhost:1337${blogData.image[0].url}`}
             alt="banner-image"
             className="w-full object-cover h-[30vh] sm:h-[80vh]"
           />
+           )}
 
           <div className="flex flex-col gap-y-7 px-5 lg:px-32 mt-20 ">
-            <p className="blog-para">{blogData.imageContent}</p>
+            {/* <p className="blog-para">{blogData.imageContent}</p> */}
 
             {blogData.content.map((block, index) => {
               const text =
@@ -113,7 +115,7 @@ function Blog() {
       ) : (
         <p className="text-center text-gray-500">Loading...</p>
       )}
-      {/*         
+             
             
              <div className={pathname === "blog/2" ? "block" : "hidden"}>
 
@@ -152,7 +154,7 @@ function Blog() {
             <div className="bg-green w-full flex flex-row items-center justify-between h-[70px] px-5 mt-16">
                 <Link to = {pathname === "blog/1" ? "/blog/2" : "/blog/1"}><button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Previous</button></Link>
                 <Link to = {pathname === "blog/1" ? "/blog/2" : "/blog/1"}><button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Next</button></Link>
-            </div>  */}
+            </div> 
 
       <Curioustoknowmore />
     </>
