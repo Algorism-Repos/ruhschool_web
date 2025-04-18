@@ -32,7 +32,7 @@ function Blog() {
       {blogData ? (
         <>
           {/* <h1 className={pathname === "blog/1" || pathname === "blog/2" ? "font-causten font-bold text-[32px] sm:text-[60px] leading-[44px]  text-green text-center mt-5 " :"hidden"}>{blogData.heading}</h1> */}
-          <h1
+          {/* <h1
             className={
               pathname === "blog/1" ||
               pathname === "blog/2" ||
@@ -40,6 +40,9 @@ function Blog() {
                 ? "font-causten font-bold text-[32px] sm:text-[60px] leading-[44px]  text-green text-center mt-5 "
                 : "hidden"
             }
+          > */}
+             <h1
+            className= "font-causten font-bold text-[32px] sm:text-[60px] leading-[44px]  text-green text-center mt-5"
           >
             {blogData.heading}
           </h1>
