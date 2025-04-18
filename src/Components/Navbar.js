@@ -32,9 +32,9 @@ function Navbar (){
         {/* Common Nav */}
         <div className={pathname != "about" ? "px-5 sm:px-28 z-10 block" : "hidden"}>
             <div className="w-full flex flex-row justify-between items-center pt-7">
-                <Link to = "/"><img src={pathname === "parents-corner" || pathname === "life@RUH"? logo_offwhite : logo} alt="RUH-Logo" className="w-[78px] h-[50px] sm:w-[153px] sm:h-[99px]" /></Link>
+                <Link to = "/"><img src={pathname === "bloglist" || pathname === "parents-corner" || pathname === "life@RUH"? logo_offwhite : logo} alt="RUH-Logo" className="w-[78px] h-[50px] sm:w-[153px] sm:h-[99px]" /></Link>
                 {/* <h1 className={pathname === "blog/1" || pathname === "blog/2" ? "font-causten font-bold text-[32px] sm:text-[60px] leading-[44px]  text-green " :"hidden"}>The Ruh'lington Post</h1> */}
-                <img src={pathname === "parents-corner" || pathname === "life@RUH"? hamburger_menu_offwhite : hamburger_menu} alt="hamburger-icon" className="w-[30px] h-[30px] sm:w-[47px] sm:h-[47px] cursor-pointer" onClick={() => {setNavMenu(true)}} />
+                <img src={pathname === "bloglist" || pathname === "parents-corner" || pathname === "life@RUH"? hamburger_menu_offwhite : hamburger_menu} alt="hamburger-icon" className="w-[30px] h-[30px] sm:w-[47px] sm:h-[47px] cursor-pointer" onClick={() => {setNavMenu(true)}} />
             </div>
         </div>
     

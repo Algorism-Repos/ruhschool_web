@@ -5,15 +5,25 @@ import Navbar from "../Components/Navbar";
 import { useEffect } from "react";
 import useFetch from "../hooks/useFtech";
 import { blockquote } from "motion/react-m";
+import Curioustoknowmore from "../Components/Curioustoknowmore";
 
 function BlogList() {
   const { data } = useFetch("https://impressive-miracle-7aab4f1009.strapiapp.com/api/blogs?populate=*");
   console.log(data);
   return (
     <div>
-      <Navbar />
+      
+      <div className="bg-green h-[35vh]">
+        <Navbar />
 
-      <div className="mt-20 max-w-screen-xl mx-auto px-5 ">
+        <div className="max-w-[661px] ml-20 mt-16">
+          <h1 className="font-aelyn text-[64px] font-bold text-offwhite ">The Ruh'lington Post</h1>
+          <h4 className="font-causten font-bold text-[32px] leading-[33px] text-offwhite">Explore perspectives, reflections, and learning adventures from Ruh'lers. The Ruh’lington Post is your gateway to engaging stories, academic insights, and campus highlights.</h4>
+        </div>
+
+      </div>
+
+      <div className="mt-20 max-w-screen-xl mx-auto sm:px-28 px-5 mb-20">
             
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-7 ">
         { data?.data?.map((blog)=>(
@@ -26,7 +36,7 @@ function BlogList() {
               alt="post_image_1"
               className="w-full h-[240px] object-cover sm:w-[279px] sm:h-[260px] rounded-[16px] "
             />
-)}
+          )}
             <h5 className="font-causten font-semibold text-[14px] text-brown ">
               Care tips
             </h5>
@@ -47,10 +57,12 @@ function BlogList() {
              {(blog.paragraph).slice(0,250)}...
             </p>
           </div>
-))}
+        ))}
         </div>
 
       </div>
+
+      <Curioustoknowmore />
     </div>
   );
 }
