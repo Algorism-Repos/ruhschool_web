@@ -7,8 +7,8 @@ import Curriculum from "./Pages/Curriculum";
 import Schoollife from "./Pages/Schoollife";
 import Parentscorner from "./Pages/Parentscorner";
 import Sports from "./Pages/Sports";
-
-import Footer from "./Components/Footer"
+import BlogList from "./Pages/BlogList";
+import Footer from "./Components/Footer";
 import ComingSoon from "./Pages/ComingSoon";
 import ScrollTop from "./Components/ScrollTop";
 import Blogs from "./Pages/Blog"
@@ -31,6 +31,7 @@ function App() {
         <Route path="/contact" element= {<Contact />} />
         <Route path= "/underconstruction" element = {<ComingSoon />}/>
         <Route path = "/blog/:id" element = {<Blogs />} />
+        <Route path ="/bloglist" element={<BlogList />} />
         {/* <Route path = "/schoollife" element = {<Blogs />} /> */}
         
       </Routes>

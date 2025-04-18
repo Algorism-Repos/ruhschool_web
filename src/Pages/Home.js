@@ -1686,9 +1686,11 @@ function Home() {
               Ruh'lers. The Ruh’lington Post is your gateway to engaging
               stories, academic insights, and campus highlights.
             </p>
+            <Link to="/bloglist"> 
             <button className="w-[175px] h-[48px] sm:w-[265px] sm:h-[72px] bg-brown text-white font-causten text-[20px] leading-[20px] sm:text-[24px] sm:leading-[24px] font-bold rounded-[8px] sm:rounded-[16px] mt-9 ">
               View all posts
             </button>
+            </Link>
           </div>
 
           <div className="flex flex-col gap-y-16">
@@ -1712,7 +1714,7 @@ function Home() {
                       src={arrow_up_right}
                       alt="arrow-up-right"
                       className="w-[24px] h-[24px] cursor-pointer"
-                    />{" "}
+                    />
                   </Link>
                 </div>
 
