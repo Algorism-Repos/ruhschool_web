@@ -12,6 +12,7 @@ import Footer from "./Components/Footer"
 import ComingSoon from "./Pages/ComingSoon";
 import ScrollTop from "./Components/ScrollTop";
 import Blogs from "./Pages/Blog"
+import Quicklink from "./Pages/Quicklink"
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/contact" element= {<Contact />} />
         <Route path= "/underconstruction" element = {<ComingSoon />}/>
         <Route path = "/blog/:id" element = {<Blogs />} />
+        <Route path = "/quicklinks" element = {<Quicklink />} />
         {/* <Route path = "/schoollife" element = {<Blogs />} /> */}
         
       </Routes>

@@ -57,11 +57,14 @@ function Blog() {
             </h4>
           </div>
 
-          <img
-            src={`http://localhost:1337${blogData.image[0].url}`}
-            alt="banner-image"
-            className="w-full object-cover h-[30vh] sm:h-[80vh]"
-          />
+          {blogData.image?.length>0 && blogData.image[0]?.url && (
+            <img
+              src={`http://localhost:1337${blogData.image[0].url}`}
+              alt="banner-image"
+              className="w-full object-cover h-[30vh] sm:h-[80vh]"
+            />
+          )}
+
 
           <div className="flex flex-col gap-y-7 px-5 lg:px-32 mt-20 ">
             <p className="blog-para">{blogData.imageContent}</p>
