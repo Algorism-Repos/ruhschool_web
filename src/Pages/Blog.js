@@ -10,7 +10,6 @@ import useFetch from "../hooks/useFtech";
 function Blog() {
   const [pathId, setPathId] = useState(null);
   const location = useLocation();
-
   const pathname = location.pathname.slice(1);
   function scrollTop() {
     window.scrollTo(0, 0);
@@ -21,19 +20,19 @@ function Blog() {
   }, [location.pathname]);
 
   const { loading, error, data } = useFetch(
-    "http://localhost:1337/api/blogs?populate=*"
+    "https://impressive-miracle-7aab4f1009.strapiapp.com/api/blogs?populate=*"
   );
   const blogData = data?.data?.find(
     (blog) => blog.blogId?.toString() === pathId
   );
-  console.log("----",blogData);
+  console.log("----",blogData.blogId);
   return (
     <>
       <Navbar />
       {blogData ? (
         <>
           {/* <h1 className={pathname === "blog/1" || pathname === "blog/2" ? "font-causten font-bold text-[32px] sm:text-[60px] leading-[44px]  text-green text-center mt-5 " :"hidden"}>{blogData.heading}</h1> */}
-          <h1
+          {/* <h1
             className={
               pathname === "blog/1" ||
               pathname === "blog/2" ||
@@ -41,6 +40,9 @@ function Blog() {
                 ? "font-causten font-bold text-[32px] sm:text-[60px] leading-[44px]  text-green text-center mt-5 "
                 : "hidden"
             }
+          > */}
+             <h1
+            className= "font-causten font-bold text-[32px] sm:text-[60px] leading-[44px]  text-green text-center mt-5"
           >
             {blogData.heading}
           </h1>
@@ -57,17 +59,17 @@ function Blog() {
             </h4>
           </div>
 
-          {blogData.image?.length>0 && blogData.image[0]?.url && (
-            <img
-              src={`http://localhost:1337${blogData.image[0].url}`}
-              alt="banner-image"
-              className="w-full object-cover h-[30vh] sm:h-[80vh]"
-            />
-          )}
+           {blogData.image?.length > 0 && blogData.image[0]?.url && ( 
 
+          <img
+            src={`${blogData.image[0].url}`}
+            alt="banner-image"
+            className="w-full object-cover h-[30vh] sm:h-[80vh]"
+          />
+           )}
 
           <div className="flex flex-col gap-y-7 px-5 lg:px-32 mt-20 ">
-            <p className="blog-para">{blogData.imageContent}</p>
+            {/* <p className="blog-para">{blogData.imageContent}</p> */}
 
             {blogData.content.map((block, index) => {
               const text =
@@ -116,8 +118,8 @@ function Blog() {
       ) : (
         <p className="text-center text-gray-500">Loading...</p>
       )}
-      {/*         
-            
+             
+{/*             
              <div className={pathname === "blog/2" ? "block" : "hidden"}>
 
                 <div className="max-w-screen-xl w-full sm:w-[800px] mx-auto my-20">
@@ -148,14 +150,14 @@ function Blog() {
                     <p className="blog-para">As a community passionate about inquiry-led education, we’re proud to see these conversations happen so naturally, reminding us why families looking for a nurturing primary school experience in Coimbatore choose Ruh.</p>
 
 
-                </div>
+                </div> */}
 
-            </div>
+            {/* </div> */}
 
             <div className="bg-green w-full flex flex-row items-center justify-between h-[70px] px-5 mt-16">
-                <Link to = {pathname === "blog/1" ? "/blog/2" : "/blog/1"}><button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Previous</button></Link>
+                <Link to = {pathname === "${}"}><button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Previous</button></Link>
                 <Link to = {pathname === "blog/1" ? "/blog/2" : "/blog/1"}><button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Next</button></Link>
-            </div>  */}
+            </div> 
 
       <Curioustoknowmore />
     </>
