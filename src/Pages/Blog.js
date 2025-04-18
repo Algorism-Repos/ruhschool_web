@@ -7,6 +7,7 @@ import banner_1 from "../assets/images/blog_banner_1.png";
 import banner_2 from "../assets/images/blog_banner_2.png";
 import Curioustoknowmore from "../Components/Curioustoknowmore";
 import useFetch from "../hooks/useFtech";
+import { path } from "motion/react-client";
 function Blog() {
   const [pathId, setPathId] = useState(null);
   const location = useLocation();
@@ -25,7 +26,9 @@ function Blog() {
   const blogData = data?.data?.find(
     (blog) => blog.blogId?.toString() === pathId
   );
-  console.log("----",blogData.blogId);
+  console.log(data?.data.length)
+
+   console.log("pathId",pathId)
   return (
     <>
       <Navbar />
@@ -42,7 +45,7 @@ function Blog() {
             }
           > */}
              <h1
-            className= "font-causten font-bold text-[32px] sm:text-[60px] leading-[44px]  text-green text-center mt-5"
+            className= "font-causten font-bold text-[32px] sm:text-[60px] leading-[44px]  text-green text-center  mt-5 sm:mt-20"
           >
             {blogData.heading}
           </h1>
@@ -155,8 +158,13 @@ function Blog() {
             {/* </div> */}
 
             <div className="bg-green w-full flex flex-row items-center justify-between h-[70px] px-5 mt-16">
-                <Link to = {pathname === "${}"}><button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Previous</button></Link>
-                <Link to = {pathname === "blog/1" ? "/blog/2" : "/blog/1"}><button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Next</button></Link>
+              { pathId != 1 &&( 
+            <Link to={`/blog/${Number(pathId)- 1}`}>
+
+            <button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Previous</button></Link>)}
+            {Number(pathId) != (data?.data.length) && ( 
+                <Link to={`/blog/${Number(pathId) + 1}`}>
+                <button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Next</button></Link>)}
             </div> 
 
       <Curioustoknowmore />
