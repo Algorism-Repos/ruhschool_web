@@ -20,12 +20,12 @@ function Blog() {
   }, [location.pathname]);
 
   const { loading, error, data } = useFetch(
-    "http://localhost:1337/api/blogs?populate=*"
+    "https://impressive-miracle-7aab4f1009.strapiapp.com/api/blogs?populate=*"
   );
   const blogData = data?.data?.find(
     (blog) => blog.blogId?.toString() === pathId
   );
-  console.log("----",blogData);
+  console.log("----",blogData.blogId);
   return (
     <>
       <Navbar />
@@ -62,7 +62,7 @@ function Blog() {
            {blogData.image?.length > 0 && blogData.image[0]?.url && ( 
 
           <img
-            src={`http://localhost:1337${blogData.image[0].url}`}
+            src={`${blogData.image[0].url}`}
             alt="banner-image"
             className="w-full object-cover h-[30vh] sm:h-[80vh]"
           />
@@ -119,7 +119,7 @@ function Blog() {
         <p className="text-center text-gray-500">Loading...</p>
       )}
              
-            
+{/*             
              <div className={pathname === "blog/2" ? "block" : "hidden"}>
 
                 <div className="max-w-screen-xl w-full sm:w-[800px] mx-auto my-20">
@@ -150,12 +150,12 @@ function Blog() {
                     <p className="blog-para">As a community passionate about inquiry-led education, we’re proud to see these conversations happen so naturally, reminding us why families looking for a nurturing primary school experience in Coimbatore choose Ruh.</p>
 
 
-                </div>
+                </div> */}
 
-            </div>
+            {/* </div> */}
 
             <div className="bg-green w-full flex flex-row items-center justify-between h-[70px] px-5 mt-16">
-                <Link to = {pathname === "blog/1" ? "/blog/2" : "/blog/1"}><button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Previous</button></Link>
+                <Link to = {pathname === "${}"}><button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Previous</button></Link>
                 <Link to = {pathname === "blog/1" ? "/blog/2" : "/blog/1"}><button className="font-causten text-offwhite text-[20px]" onClick={scrollTop}>Next</button></Link>
             </div> 
 

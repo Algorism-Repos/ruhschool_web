@@ -7,7 +7,7 @@ import useFetch from "../hooks/useFtech";
 import { blockquote } from "motion/react-m";
 
 function BlogList() {
-  const { data } = useFetch("http://localhost:1337/api/blogs?populate=*");
+  const { data } = useFetch("https://impressive-miracle-7aab4f1009.strapiapp.com/api/blogs?populate=*");
   console.log(data);
   return (
     <div>
@@ -15,16 +15,16 @@ function BlogList() {
 
       <div className="mt-20 max-w-screen-xl mx-auto px-5 ">
             
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-7 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-7 ">
         { data?.data?.map((blog)=>(
 
           <div className="flex flex-col justify-start items-start gap-y-3 max-w-[300px]">
             {blog.image?.length> 0 && blog.image[0]?.url && ( 
 
             <img
-              src={`http://localhost:1337${blog.image[0].url}`}
+            src={`${blog.image[0].url}`}
               alt="post_image_1"
-              className="w-full h-[240px] object-cover sm:w-[279px] sm:h-[260px] rounded-[16px] my-auto"
+              className="w-full h-[240px] object-cover sm:w-[279px] sm:h-[260px] rounded-[16px] "
             />
 )}
             <h5 className="font-causten font-semibold text-[14px] text-brown ">
