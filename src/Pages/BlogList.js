@@ -14,10 +14,8 @@ function BlogList() {
       <Navbar />
 
       <div className="mt-20 max-w-screen-xl mx-auto px-5 ">
-            
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-7 ">
         { data?.data?.map((blog)=>(
-
           <div className="flex flex-col justify-start items-start gap-y-3 max-w-[300px]">
             {blog.image?.length> 0 && blog.image[0]?.url && ( 
 
