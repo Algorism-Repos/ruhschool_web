@@ -16,19 +16,10 @@ function BlogList() {
       <div className="bg-green h-[35vh]">
         <Navbar />
 
-        <div className="max-w-[661px] sm:ml-20 mt-16 text-center px-3 sm:px-0">
-          <h1 className="font-aelyn text-[32px] sm:text-[64px] font-bold text-offwhite ">The Ruh'lington Post</h1>
-          <h4 className="font-causten font-bold text-[20px] sm:text-[32px] leading-[33px] text-offwhite mt-5 sm:mt-0">Explore perspectives, reflections, and learning adventures from Ruh'lers. The Ruh’lington Post is your gateway to engaging stories, academic insights, and campus highlights.</h4>
-        </div>
-
-      </div>
-
-      <div className="mt-20 max-w-screen-xl mx-auto sm:px-28 px-5 mb-20">
-            
+      <div className="mt-20 max-w-screen-xl mx-auto px-5 ">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-7 ">
         { data?.data?.map((blog)=>(
-
-          <div className="flex flex-col justify-start items-start gap-y-3 sm:max-w-[300px] w-full">
+          <div className="flex flex-col justify-start items-start gap-y-3 max-w-[300px]">
             {blog.image?.length> 0 && blog.image[0]?.url && ( 
 
             <img

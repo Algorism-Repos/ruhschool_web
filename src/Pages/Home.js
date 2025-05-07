@@ -96,6 +96,7 @@ import Navbar from "../Components/Navbar";
 import Friends from "../Components/Friends";
 import Curioustoknowmore from "../Components/Curioustoknowmore";
 function Home() {
+  const[instafeed,setInstafeed]=useState()
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(MotionPathPlugin);
   const containerRef = useRef(null);
@@ -321,6 +322,20 @@ function Home() {
     },
   ];
 
+
+  const  get_instfeeds = async()=>{
+    let accesToken='IGAAQy22XzWVNBZAE5CMnd2VGpUcDZAJd3phdy0yMzNvREM0UUpERHMycER2bXE4ZAEdxT3ZAyUUl5SVdVVGFZAYnRvYnZAfYkFpR1NYV0p6ZAHptNEFxX3R6WGV6RC1IWnYxYmpqdXFiMk9Qb05JNTdmMExYMXF4T2ZA2dzZAobVJlVWtZAdwZDZD'
+    // const url=`https://graph.facebook.com/USER-ID/photos?access_token=${accesToken}`;
+    const url=`https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${accesToken}`;
+
+    const data=await fetch(url)
+    const feed =await data.json()
+    console.log("feed",feed.data)
+    setInstafeed(feed.data)
+  }
+useEffect(()=>{
+  get_instfeeds()
+},[])
   return (
     <>
       {/* Small screen - Banner */}
@@ -1766,6 +1781,30 @@ function Home() {
             </div>
           </div>
         </div>
+       
+        <div className="flex   gap-x-3 sm:gap-x-12  mt-20">
+          {instafeed && instafeed.map((item, index) => ( item.media_type !=='VIDEO' && ( 
+          <> 
+          {/* <h1>{item.id}</h1> */}
+          <motion.div
+            className="flex flex-row gap-x-3 sm:gap-x-12 mt-12 shrink-0"
+            initial={{ x: 0 }}
+            animate={{ x: "-100%" }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          >
+                  <img
+                  key={item.id}
+                    src={item.media_url}
+                    // alt={item.caption}
+                  className="w-[84px] h-[75px] sm:w-[220px] sm:h-[240px]"
+                  />
+             </motion.div>
+          </>
+          )
+        ))}
+      </div>
+             
+           
       </div>
 
       <Curioustoknowmore />
