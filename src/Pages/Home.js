@@ -336,6 +336,7 @@ function Home() {
 useEffect(()=>{
   get_instfeeds()
 },[])
+
   return (
     <>
       {/* Small screen - Banner */}
@@ -1786,19 +1787,14 @@ useEffect(()=>{
           {instafeed && instafeed.map((item, index) => ( item.media_type !=='VIDEO' && ( 
           <> 
           {/* <h1>{item.id}</h1> */}
-          <motion.div
-            className="flex flex-row gap-x-3 sm:gap-x-12 mt-12 shrink-0"
-            initial={{ x: 0 }}
-            animate={{ x: "-100%" }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          >
+          
                   <img
                   key={item.id}
                     src={item.media_url}
                     // alt={item.caption}
                   className="w-[84px] h-[75px] sm:w-[220px] sm:h-[240px]"
                   />
-             </motion.div>
+             
           </>
           )
         ))}
