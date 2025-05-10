@@ -75,13 +75,12 @@ function BlogList() {
             </div>
           ))}
           </div>
-
         </div>
 
        <div className = "max-w-screen-xl mx-auto px-12 my-12">
         <h1 className="font-causten text-[36px] md:text-[64px] md:leading-[32px] leading-[44px] font-bold text-green my-12 w-fit mx-auto text-center">Follow us on Instagram</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-5 gap-x-3 md:gap-x-0 md:max-w-[775px] max-w-fit mx-auto">
-            {instafeed && instafeed.map((item, index) => ( item.media_type !=='VIDEO' && ( 
+            {instafeed && instafeed.slice(0, 12).map((item, index) => ( item.media_type !=='VIDEO' && ( 
             <> 
               {/* <h1>{item.id}</h1> */}
             
