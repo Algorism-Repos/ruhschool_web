@@ -4,36 +4,37 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "Blogs"
+    "displayName": "Blog"
   },
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "heading": {
-      "type": "text"
-    },
-    "blogId": {
-      "type": "integer"
+      "type": "string"
     },
     "subHeading": {
-      "type": "text"
+      "type": "string"
     },
     "paragraph": {
       "type": "text"
     },
     "image": {
+      "type": "media",
+      "multiple": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "content": {
       "type": "blocks"
+    },
+    "blogId": {
+      "type": "integer"
     }
   }
 }
