@@ -13,6 +13,7 @@ import ComingSoon from "./Pages/ComingSoon";
 import ScrollTop from "./Components/ScrollTop";
 import Blogs from "./Pages/Blog"
 import Quicklink from "./Pages/Quicklink"
+import Sitemap from "./Pages/Sitemap"
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
         <Route path= "/underconstruction" element = {<ComingSoon />}/>
         <Route path = "/blog/:id" element = {<Blogs />} />
         <Route path = "/quicklinks" element = {<Quicklink />} />
+        <Route path="/sitemap" element = {<Sitemap />} />
         <Route path ="/bloglist" element={<BlogList />} />
         {/* <Route path = "/schoollife" element = {<Blogs />} /> */}
         

@@ -18,7 +18,7 @@ function Footer (){
     
     return (
         <>
-            <div className={page !== "/underconstruction" ? "max-w-screen-xl mx-auto pt-[172px] pb-12 px-28 sm:block hidden" : "hidden"}>
+            <div className={page !== "/underconstruction" && page!== "/sitemap" ? "max-w-screen-xl mx-auto pt-[172px] pb-12 px-28 sm:block hidden" : "hidden"}>
                 <div className="flex flex-row items-start justify-between text-brown">
                     <div className="">
                         <img src={logo} alt="logo" className="w-[242px] h-[157px]" />
@@ -114,7 +114,7 @@ function Footer (){
             </div>
 
             {/* Mobile View */}
-                <div className={page !== "/underconstruction" ? "bg-offwhite py-12 px-9 sm:hidden block text-brown" : "hidden"}>
+                <div className={page !== "/underconstruction" && page !== "/sitemap" ? "bg-offwhite py-12 px-9 sm:hidden block text-brown" : "hidden"}>
                     <img src={logo} alt="logo" className="w-[150px] h-[100px]" />
 
                     <div className="flex flex-row gap-x-24 mt-20">

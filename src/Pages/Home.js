@@ -323,8 +323,6 @@ function Home() {
   ];
 
 
-  
-
   return (
     <>
       {/* Small screen - Banner */}

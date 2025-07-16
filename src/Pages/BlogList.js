@@ -84,7 +84,7 @@ function BlogList() {
             <> 
               
             
-              <div className="border-2 border-black w-fit h-fit">
+              <div className="border-2 border-black rounded-[12px] w-fit h-fit">
                 <a href= "https://www.instagram.com/ruh_primary?igsh=ZjZrNGFuZXNvbzY5" target = "_blank">
                   <img
                         key={item.id}
