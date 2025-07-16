@@ -219,6 +219,11 @@ function Home() {
   );
    const blogData = data?.data
 
+              //  {blogData && blogData?.map((blog,index) =>( 
+              //   console.log("image",blog.image?.[0].url)
+              //  )
+              //  )}
+
   useEffect(() => {
     const interval = setInterval(() => {
       setVisibleIndex((prev) => (prev + 1) % images.length);
@@ -1718,10 +1723,10 @@ function Home() {
           
          
             <div className="flex flex-col gap-y-16">
-               {blogData && blogData.map((blog,index) =>( 
+               {blogData && blogData?.slice(0, 2).map((blog,index) =>( 
               <div className="flex flex-col gap-y-5 sm:gap-y-0 sm:flex-row gap-x-5 px-3 max-w-[650px]">
                 <img
-                  src={`${blog.image[0].url}`}
+                   src={`${blog.image?.[0].url}`}
                   alt="post_image_1"
                   className="w-full h-[240px] object-cover sm:w-[279px] sm:h-[240px] rounded-[16px]"
                 />
