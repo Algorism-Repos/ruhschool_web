@@ -1,0 +1,14 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ruhs",
+  "info": {
+    "singularName": "ruh",
+    "pluralName": "ruhs",
+    "displayName": "ruh"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}

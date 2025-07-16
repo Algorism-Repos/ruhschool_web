@@ -1,5 +1,5 @@
 {
-  "name": "strapi",
+  "name": "ruhschool",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -15,14 +15,13 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.12.3",
-    "@strapi/plugin-users-permissions": "5.12.3",
-    "@strapi/strapi": "5.12.3",
+    "@strapi/plugin-cloud": "5.15.1",
+    "@strapi/plugin-users-permissions": "5.15.1",
+    "@strapi/strapi": "5.15.1",
     "better-sqlite3": "11.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
-    "strapi-plugin-import-export-content": "^0.4.2",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
@@ -36,6 +35,7 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "440d0532-b33d-4d88-a896-06abb45cf3fa"
+    "uuid": "5b2a9702-c73c-4f0a-83df-f795555a0f5b",
+    "installId": "7cb945b42ac56a5b639819315071eab8b1815ae39339b42f59d6332b94a9403a"
   }
 }
