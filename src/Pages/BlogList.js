@@ -9,12 +9,12 @@ import { blockquote } from "motion/react-m";
 import Curioustoknowmore from "../Components/Curioustoknowmore";
 
 function BlogList() {
-  const { data } = useFetch("https://impressive-miracle-7aab4f1009.strapiapp.com/api/blogs?populate=*");
+  const { data } = useFetch("https://amazing-dinosaurs-bbc2c50a9d.strapiapp.com/api/blogs?populate=*");
   console.log(data);
   const[instafeed,setInstafeed]= useState()
 
   const  get_instfeeds = async()=>{
-      let accesToken='IGAAQy22XzWVNBZAE5CMnd2VGpUcDZAJd3phdy0yMzNvREM0UUpERHMycER2bXE4ZAEdxT3ZAyUUl5SVdVVGFZAYnRvYnZAfYkFpR1NYV0p6ZAHptNEFxX3R6WGV6RC1IWnYxYmpqdXFiMk9Qb05JNTdmMExYMXF4T2ZA2dzZAobVJlVWtZAdwZDZD'
+      let accesToken='IGAAQy22XzWVNBZAE9fQzlQWmZAuaFJucG9CbEktZAkRLa0pwcUt3RTgtVDAyLS1OLTBLNTBnT0JTRkt0WVVxN3pqaU9JeGxsZATB6ckhVRGM4dEtzUTh3ZAUlld25WRWZAjX2lVa0FNMVQ3WXotOTBZAWXk2WnQwQkhkUTVoZAXF4V2hwYwZDZD'
       // const url=`https://graph.facebook.com/USER-ID/photos?access_token=${accesToken}`;
       const url=`https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${accesToken}`;
   
