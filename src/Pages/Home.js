@@ -95,8 +95,10 @@ import kinaesthetic from "../assets/images/home/kinaesthetic.png";
 import Navbar from "../Components/Navbar";
 import Friends from "../Components/Friends";
 import Curioustoknowmore from "../Components/Curioustoknowmore";
+import useFetch from "../hooks/useFtech";
+import { object } from "motion/react-client";
 function Home() {
-  const[instafeed,setInstafeed]=useState()
+  const [instafeed, setInstafeed] = useState();
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(MotionPathPlugin);
   const containerRef = useRef(null);
@@ -175,14 +177,14 @@ function Home() {
     AOS.init({ duration: 1500 });
   }, []);
 
-//   gsap.to(".box", {
-//     duration: 4,
-//     motionPath: {
-//       path: "M 0,250 C 100,50 400,50 500,250", // Custom SVG path
-//       align: "self",
-//       autoRotate: true,
-//     },
-//   });
+  //   gsap.to(".box", {
+  //     duration: 4,
+  //     motionPath: {
+  //       path: "M 0,250 C 100,50 400,50 500,250", // Custom SVG path
+  //       align: "self",
+  //       autoRotate: true,
+  //     },
+  //   });
 
   // useEffect(() => {
   //     const waveAnimation = gsap.timeline({
@@ -211,6 +213,11 @@ function Home() {
   const { scrollYProgress } = useScroll({ target: bannerRef });
 
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-67.9%"]);
+  const { loading, error, data } = useFetch(
+    // "http://localhost:1337/api/blogs?populate=*"
+    "https://amazing-dinosaurs-bbc2c50a9d.strapiapp.com/api/blogs?populate=*"
+  );
+   const blogData = data?.data
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -322,20 +329,20 @@ function Home() {
     },
   ];
 
-
-  const  get_instfeeds = async()=>{
-    let accesToken='IGAAQy22XzWVNBZAE5CMnd2VGpUcDZAJd3phdy0yMzNvREM0UUpERHMycER2bXE4ZAEdxT3ZAyUUl5SVdVVGFZAYnRvYnZAfYkFpR1NYV0p6ZAHptNEFxX3R6WGV6RC1IWnYxYmpqdXFiMk9Qb05JNTdmMExYMXF4T2ZA2dzZAobVJlVWtZAdwZDZD'
+  const get_instfeeds = async () => {
+    let accesToken =
+      "IGAAQy22XzWVNBZAE5CMnd2VGpUcDZAJd3phdy0yMzNvREM0UUpERHMycER2bXE4ZAEdxT3ZAyUUl5SVdVVGFZAYnRvYnZAfYkFpR1NYV0p6ZAHptNEFxX3R6WGV6RC1IWnYxYmpqdXFiMk9Qb05JNTdmMExYMXF4T2ZA2dzZAobVJlVWtZAdwZDZD";
     // const url=`https://graph.facebook.com/USER-ID/photos?access_token=${accesToken}`;
-    const url=`https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${accesToken}`;
+    const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${accesToken}`;
 
-    const data=await fetch(url)
-    const feed =await data.json()
-    console.log("feed",feed.data)
-    setInstafeed(feed.data)
-  }
-useEffect(()=>{
-  get_instfeeds()
-},[])
+    const data = await fetch(url);
+    const feed = await data.json();
+    console.log("feed", feed.data);
+    setInstafeed(feed.data);
+  };
+  useEffect(() => {
+    get_instfeeds();
+  }, []);
 
   return (
     <>
@@ -1702,105 +1709,66 @@ useEffect(()=>{
               Ruh'lers. The Ruh’lington Post is your gateway to engaging
               stories, academic insights, and campus highlights.
             </p>
-            <Link to="/bloglist"> 
-            <button className="w-[175px] h-[48px] sm:w-[265px] sm:h-[72px] bg-brown text-white font-causten text-[20px] leading-[20px] sm:text-[24px] sm:leading-[24px] font-bold rounded-[8px] sm:rounded-[16px] mt-9 ">
-              View all posts
-            </button>
+            <Link to="/bloglist">
+              <button className="w-[175px] h-[48px] sm:w-[265px] sm:h-[72px] bg-brown text-white font-causten text-[20px] leading-[20px] sm:text-[24px] sm:leading-[24px] font-bold rounded-[8px] sm:rounded-[16px] mt-9 ">
+                View all posts
+              </button>
             </Link>
           </div>
-
-          <div className="flex flex-col gap-y-16">
-            <div className="flex flex-col gap-y-5 sm:gap-y-0 sm:flex-row gap-x-5 px-3 max-w-[650px]">
-              <img
-                src={post_image_1}
-                alt="post_image_1"
-                className="w-full h-[240px] object-cover sm:w-[279px] sm:h-[240px] rounded-[16px]"
-              />
-
-              <div>
-                {/* <h5 className="font-causten font-semibold text-[14px] text-brown ">Care tips</h5> */}
-
-                <div className="flex flex-row justify-between items-start mt-3">
-                  <h1 className="font-causten text-[24px] font-bold leading-[32px] text-black w-[357px] sm:w-[239px]">
-                    Exploring the Deep Blue
-                  </h1>
-
-                  <Link to="/blog/1">
-                    <img
-                      src={arrow_up_right}
-                      alt="arrow-up-right"
-                      className="w-[24px] h-[24px] cursor-pointer"
-                    />
-                  </Link>
-                </div>
-
-                <p className="font-causten text-[16px] font-normal leading-[24px] mt-3">
-                  Inspired by a song, learners explored marine life through art.
-                  They painted a blue ocean, crafted sea creatures with natural
-                  materials, and highlighted pollution using plastic waste. The
-                  canvas became a creative reflection of their inquiry, blending
-                  art, learning, and environmental awareness.
-                </p>
-                {/* <p className="font-causten text-[14px] font-semibold leading-[20px] text-black mt-4">Vineeth</p>
-                                <p className="font-causten text-[14px] font-light leading-[20px] text-black ">20 Jan 2024</p> */}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-y-5 sm:gap-y-0 px-3 sm:flex-row gap-x-5 max-w-[650px]">
-              <img
-                src={post_image_2}
-                alt="post_image_2"
-                className="w-full object-cover sm:w-[279px] h-[240px] rounded-[16px]"
-              />
-
-              <div>
-                {/* <h5 className="font-causten font-semibold text-[14px] text-brown ">Care tips</h5> */}
-
-                <div className="flex flex-row justify-between items-start mt-3">
-                  <h1 className="font-causten text-[24px] font-bold leading-[32px] text-black w-[357px] sm:w-[239px]">
-                    Protecting Our Oceans: Little Ruhlers Take Action for Sea
-                    Turtles
-                  </h1>
-                  <Link to="/blog/2">
-                    <img
-                      src={arrow_up_right}
-                      alt="arrow-up-right"
-                      className="w-[24px] h-[24px] cursor-pointer"
-                    />
-                  </Link>
-                </div>
-
-                <p className="font-causten text-[16px] font-normal leading-[24px] mt-3">
-                  Little Ruhlers explored ocean pollution's impact on sea
-                  turtles through a hands-on project, creating a model with
-                  recycled materials to raise awareness about marine
-                  conservation.
-                </p>
-                {/* <p className="font-causten text-[14px] font-semibold leading-[20px] text-black mt-4">Sahana</p> */}
-                {/* <p className="font-causten text-[14px] font-light leading-[20px] text-black ">20 Jan 2024</p> */}
-              </div>
-            </div>
-          </div>
-        </div>
-       
-        <div className="flex   gap-x-3 sm:gap-x-12  mt-20">
-          {instafeed && instafeed.map((item, index) => ( item.media_type !=='VIDEO' && ( 
-          <> 
-          {/* <h1>{item.id}</h1> */}
           
-                  <img
-                  key={item.id}
-                    src={item.media_url}
-                    // alt={item.caption}
-                  className="w-[84px] h-[75px] sm:w-[220px] sm:h-[240px]"
-                  />
-             
-          </>
-          )
-        ))}
-      </div>
-             
-           
+         
+            <div className="flex flex-col gap-y-16">
+               {blogData && blogData.map((blog,index) =>( 
+              <div className="flex flex-col gap-y-5 sm:gap-y-0 sm:flex-row gap-x-5 px-3 max-w-[650px]">
+                <img
+                  src={`${blog.image[0].url}`}
+                  alt="post_image_1"
+                  className="w-full h-[240px] object-cover sm:w-[279px] sm:h-[240px] rounded-[16px]"
+                />
+
+                <div>
+                  {/* <h5 className="font-causten font-semibold text-[14px] text-brown ">Care tips</h5> */}
+
+                  <div className="flex flex-row justify-between items-start mt-3">
+                    <h1 className="font-causten text-[24px] font-bold leading-[32px] text-black w-[357px] sm:w-[239px]">
+                    {blog.heading} 
+                    </h1>
+
+                    <Link to="/blog/1">
+                      <img
+                        src={arrow_up_right}
+                        alt="arrow-up-right"
+                        className="w-[24px] h-[24px] cursor-pointer"
+                      />
+                    </Link>
+                  </div>
+
+                  <p className="font-causten text-[16px] font-normal leading-[24px] mt-3">
+                     {blog.paragraph}
+                  </p>
+                </div>
+                  </div>
+          ))}
+              </div>
+      
+        <div className="flex   gap-x-3 sm:gap-x-12  mt-20">
+          {instafeed &&
+            instafeed.map(
+              (item, index) =>
+                item.media_type !== "VIDEO" && (
+                  <>
+                    {/* <h1>{item.id}</h1> */}
+
+                    <img
+                      key={item.id}
+                      src={item.media_url}
+                      // alt={item.caption}
+                      className="w-[84px] h-[75px] sm:w-[220px] sm:h-[240px]"
+                    />
+                  </>
+                )
+            )}
+        </div>
       </div>
 
       <Curioustoknowmore />
@@ -1912,6 +1880,7 @@ useEffect(()=>{
             </a>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
