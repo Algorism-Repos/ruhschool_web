@@ -21,8 +21,8 @@ function Blog() {
   }, [location.pathname]);
 
   const { loading, error, data } = useFetch(
-    "http://localhost:1337/api/blogs?populate=*"
-    // "https://impressive-miracle-7aab4f1009.strapiapp.com/api/blogs?populate=*"
+    // "http://localhost:1337/api/blogs?populate=*"
+    "https://amazing-dinosaurs-bbc2c50a9d.strapiapp.com/api/blogs?populate=*"
 
   );
   const blogData = data?.data?.find(
