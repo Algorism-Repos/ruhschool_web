@@ -456,69 +456,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Banner section - mobile screen 
-            <div className="sm:hidden block relative ">
-                <div className="flex flex-row items-center justify-between w-full absolute left-0 top-9 px-3 z-10">
-                    <img src={logo} alt="ruh_logo" className="w-[100px]" />
-                    <img src={hamburger_menu} alt="hamburger_menu" className="w-[30px] h-[30px] cursor-pointer" onClick={() => {setNavMenu(true)}} />
-                </div>
-
-                <Swiper
-                        ref = {""}
-                        modules={[Autoplay, Mousewheel]}
-                        slidesPerView={1}
-                        mousewheel={{ forceToAxis: true, invert: false, sensitivity: 0.02}} // Enable horizontal scrolling
-                        onSlideChange={({isEnd}) => {
-                            if(isEnd){
-                                setIsHorizontalScrolling(false);
-                            }
-                        }}
-                >
-                    <SwiperSlide>
-                       <div className = "relative">
-                            <img src={navimage_1_mobile} alt="nav-image" className="w-full h-[641px]" />
-                            
-                            <div className="mx-auto mt-12 flex flex-col items-center">
-                                <h1 className="font-aelyn text-[24px] leading-[25px] text-brown font-normal w-[280px] text-center ">Redefining education <span className="font-causten font-bold text-green">through innovation</span></h1>
-                                <img src={banner_line} alt="banner_line" className="w-[203px] h-[7px]" />
-
-                                <Link to = "/contact"><button className="bg-brown w-[173px] h-[48px] rounded-[8px] text-white font-causten font-bold text-[20px] leading-[20px] mt-7">Contact now</button></Link>
-                            </div>
-                            <img src = {rightarrow} alt="arrow-icon" className = "absolute right-1 bottom-[310px] w-[30px] h-[30px] z-[100] animate-ping" />
-                       </div>
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <div className="relative">
-                            <div className="mx-auto mt-36 flex flex-col items-center">
-                                <h1 className="font-aelyn text-[24px] leading-[25px] text-brown font-normal w-[280px] text-center ">An ideal environment <span className="font-causten font-bold text-green">that nutures creativity</span></h1>
-                                <img src={banner_line} alt="banner_line" className="w-[203px] h-[7px]" />
-
-                                <Link to = "/contact"><button className="bg-brown w-[173px] h-[48px] rounded-[8px] text-white font-causten font-bold text-[20px] leading-[20px] mt-7">Contact now</button></Link>
-                            </div>
-                        
-                            <img src={navimage_2_mobile} alt="nav-image" className="w-full h-[451px] mt-12" />
-                            <img src = {rightarrow} alt="arrow-icon" className = "absolute right-1 bottom-[310px] w-[30px] h-[30px] z-[100] animate-ping" />
-                        </div>
-                    </SwiperSlide>
-                    
-                    <SwiperSlide>
-
-                        <img src={navimage_3_mobile} alt="nav-image" className="w-full h-[415px]" />
-                        
-                        <div className="mx-auto mt-20 flex flex-col items-center">
-                            <h1 className="font-aelyn text-[24px] leading-[25px] text-brown font-normal w-[280px] text-center ">Preparing learners <br /><span className="font-causten font-bold text-green">for a global future</span></h1>
-                            <img src={banner_line} alt="banner_line" className="w-[203px] h-[7px]" />
-
-                            <Link to = "/contact"><button className="bg-brown w-[173px] h-[48px] rounded-[8px] text-white font-causten font-bold text-[20px] leading-[20px] mt-7">Contact now</button></Link>
-                        </div>
-                        
-                        
-                    </SwiperSlide>
-                
-                </Swiper>
-            
-            </div>*/}
+      
 
       {/* Banner Section - Large Screens (GSAP) */}
       <div className="sm:block relative hidden">
@@ -609,163 +547,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Banner Section - large screens (Framer-motion) -Hidden */}
-      <div className=" relative hidden">
-        <div className="carousel relative" ref={bannerRef}>
-          <div className="contentContainer">
-            <div className=" absolute w-full top-0 sm:top-7 left-0 px-24  z-10 ">
-              <div className="flex flex-row justify-between items-center  ">
-                <img src={logo} alt="RUH-Logo" className="w-[153px] h-[99px]" />
-                <img
-                  src={hamburger_menu}
-                  alt="hamburger-icon"
-                  className="w-[47px] h-[47px] cursor-pointer "
-                  onClick={() => {
-                    setNavMenu(true);
-                  }}
-                />
-              </div>
-            </div>
-            <motion.div className="images relative" style={{ x }}>
-              {/* Banner 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 150 }}
-                whileInView={{ opacity: 1, y: 0, threshold: 0.99 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-              >
-                <div className="flex flex-row items-center w-[100vw] shrink-0 relative">
-                  <img src={navimage_1} className="w-3/4 object-cover" />
-
-                  <div className="w-1/4 flex flex-col items-center ">
-                    <h1 className="font-aelyn text-center text-[42px] font-regular leading-[45px] w-[280px] text-brown ">
-                      An Ideal environment{" "}
-                      <span className="text-green !font-causten  font-bold">
-                        that nurtures creativity.
-                      </span>
-                    </h1>
-                    <img
-                      src={banner_line}
-                      alt="banner-line"
-                      className="w-[216px] h-[13px]"
-                    />
-                    <Link to="/contact">
-                      <button className="w-[265px] h-[72px] bg-brown text-white font-causten text-[24px] leading-[24px] font-bold rounded-[16px] mt-12 cursor-pointer">
-                        Book Campus Tour
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Banner 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 150 }}
-                whileInView={{ opacity: 1, y: 0, threshold: 0.99 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-              >
-                <div className="flex flex-row items-center w-screen pl-5 lg:pl-0  shrink-0 ">
-                  <img
-                    src={navimage_2}
-                    className="w-3/4 order-2 object-cover "
-                  />
-
-                  {/* <div className="w-1/4 flex flex-col items-center ">
-                                                <h1 className="font-aelyn text-center text-[42px] font-regular leading-[45px] w-[280px] text-brown ">An Ideal environment <span className="text-green !font-causten  font-bold">that nurtures creativity.</span></h1>
-                                                <img src={banner_line} alt="banner-line" className="w-[216px] h-[13px]"/>
-                                                <Link to = "/contact"><button className="w-[265px] h-[72px] bg-brown text-white font-causten text-[24px] leading-[24px] font-bold rounded-[16px] mt-12 cursor-pointer">Book Campus Tour</button></Link>
-                                                
-                                            </div> */}
-                </div>
-              </motion.div>
-
-              {/* Banner 3 */}
-              <motion.div
-                initial={{ opacity: 0, y: 150 }}
-                whileInView={{ opacity: 1, y: 0, threshold: 0.99 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-              >
-                <div className="flex flex-row justify-between items-center w-screen relative shrink-0">
-                  <div className="w-1/4 flex flex-col items-center mt-28 h-fit ">
-                    <h1 className="font-aelyn text-center text-[42px] font-regular leading-[45px] w-[215px] text-brown ">
-                      Preparing learners{" "}
-                      <span className="text-green !font-causten  font-bold">
-                        for a global future
-                      </span>
-                    </h1>
-                    <img
-                      src={banner_line}
-                      alt="banner-line"
-                      className="w-[216px] h-[13px]"
-                    />
-                    <Link to="/contact">
-                      <button className="w-[265px] h-[72px] bg-brown text-white font-causten text-[24px] leading-[24px] font-bold rounded-[16px] mt-12 cursor-pointer">
-                        Book campus tour
-                      </button>
-                    </Link>
-                  </div>
-
-                  <img src={navimage_3} className="w-2/4 mr-12 " />
-                </div>
-              </motion.div>
-
-              {/* <Swiper
-                                    ref = {swiperRef}
-                                    modules={[Autoplay, Mousewheel]}
-                                    slidesPerView={1}
-                                    mousewheel={{ forceToAxis: true, invert: false}} // Enable horizontal scrolling
-                                    onSlideChange={({isEnd}) => {
-                                        if(isEnd){
-                                            setIsHorizontalScrolling(false);
-                                        }
-                                        AOS.refresh();
-                                    }}
-                                >
-                                    <SwiperSlide>
-                                        <div className="flex flex-row items-center w-full ">
-                                            <img src={navimage_1} className="w-3/4 "/>
-
-                                            <div className="w-1/4 flex flex-col items-center pr-32">
-                                                <h1 className="font-aelyn text-center text-[42px] font-regular leading-[45px] w-[280px] text-brown ">Redefining education <span className="text-green !font-causten  font-bold">through innovation</span></h1>
-                                                <img src={banner_line} alt="banner-line" className="w-[216px] h-[13px]"/>
-                                                <Link to = "/contact"><button className="w-[265px] h-[72px] bg-brown text-white font-causten text-[24px] leading-[24px] font-bold rounded-[16px] mt-12 cursor-pointer">Contact Now</button></Link>
-                                                
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-
-                                    <SwiperSlide>
-                                        <div className="flex flex-row items-center w-full pl-5 lg:pl-0 ">
-                                            <img src={navimage_2} className="w-3/4 order-2 object-cover "/>
-
-                                            <div className="w-1/4 flex flex-col items-center ">
-                                                <h1 className="font-aelyn text-center text-[42px] font-regular leading-[45px] w-[280px] text-brown ">An Ideal environment <span className="text-green !font-causten  font-bold">that nurtures creativity.</span></h1>
-                                                <img src={banner_line} alt="banner-line" className="w-[216px] h-[13px]"/>
-                                                <Link to = "/contact"><button className="w-[265px] h-[72px] bg-brown text-white font-causten text-[24px] leading-[24px] font-bold rounded-[16px] mt-12 cursor-pointer">Book Campus Tour</button></Link>
-                                                
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-
-                                    <SwiperSlide>
-                                        <div className="flex flex-row justify-between items-center w-full relative ">
-
-                                            <div className="w-1/4 flex flex-col items-center mt-28 h-fit ">
-                                                <h1 className="font-aelyn text-center text-[42px] font-regular leading-[45px] w-[215px] text-brown ">Preparing learners <span className="text-green !font-causten  font-bold">for a global future</span></h1>
-                                                <img src={banner_line} alt="banner-line" className="w-[216px] h-[13px]"/>
-                                                <Link to ="/contact"><button className="w-[265px] h-[72px] bg-brown text-white font-causten text-[24px] leading-[24px] font-bold rounded-[16px] mt-12 cursor-pointer">Book campus tour</button></Link>
-                                                
-                                            </div>
-
-                                            <img src={navimage_3} className="w-2/4 mr-12 "/>
-                                        </div> 
-
-                                    </SwiperSlide>
-
-                                </Swiper> */}
-            </motion.div>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Stories Section */}
       <div
@@ -1518,85 +1300,11 @@ function Home() {
             />
           </motion.div>
         </div>
-
-        {/* <div className="mt-12 max-w-7xl mx-auto w-full ">
-                    <Swiper
-                        modules={[Autoplay]}
-                        spaceBetween={40}
-                        slidesPerView={7}
-                        autoplay= {{delay: 1000,}}
-                        className="mt-12"
-                        loop = {true}
-                        breakpoints={{
-                            300: {
-                                spaceBetween: 20,
-                                slidesPerView: 5,
-
-                            },
-                            700: {
-                                spaceBetween: 40,
-                                slidesPerView: 7,
-                            }
-                        }}
-                    >
-                        <SwiperSlide><img src={afs_logo} alt="afs_logo" className="w-[84px] h-[75px] sm:w-[168px] sm:h-[150px]"/> </SwiperSlide>
-                        <SwiperSlide><img src={igbc_logo} alt="afs_logo" className="w-[74.85px] h-[75px] sm:w-[149px] sm:h-[150px]"/> </SwiperSlide>
-                        <SwiperSlide><img src={mca_logo} alt="afs_logo" className="w-[75px] h-[75px] sm:w-[150px] sm:h-[150px]"/> </SwiperSlide>
-                        <SwiperSlide><img src={dais_logo} alt="afs_logo" className="w-[75px] h-[75px] sm:w-[156px] sm:h-[150px]"/> </SwiperSlide>
-                        <SwiperSlide><img src={ielts_logo} alt="afs_logo" className="w-[75px] h-[75px] sm:w-[168px] sm:h-[150px]"/> </SwiperSlide>
-                        <SwiperSlide><img src={foryoung_logo} alt="afs_logo" className="w-[75px] h-[75px] sm:w-[148px] sm:h-[150px]"/> </SwiperSlide>
-                        <SwiperSlide><img src={internationcouncil_logo} alt="afs_logo" className="w-[75px] h-[75px] sm:w-[171px] sm:h-[150px]"/> </SwiperSlide>
-                        <SwiperSlide><img src={nabet_logo} alt="afs_logo" className="w-[75px] h-[75px] sm:w-[168px] sm:h-[150px]"/> </SwiperSlide>
-
-                    </Swiper>
-
-                    <Swiper
-                        modules={[Autoplay]}
-                        spaceBetween={10}
-                        slidesPerView={5}
-                        autoplay= {{delay: 1000, reverseDirection: true}}
-                        className="mt-12"
-                        loop = {true}
-                    >
-                        <SwiperSlide><img src={acceleratedprogram_logo} alt="afs_logo" className="w-[115px] h-[75px] sm:w-[230px] sm:h-[150px]"/></SwiperSlide>
-                        <SwiperSlide><img src={worldready_logo} alt="afs_logo" className="w-[149px] h-[75px] sm:w-[299px] sm:h-[150px]"/></SwiperSlide>
-                        <SwiperSlide><img src={ew_logo} alt="afs_logo" className="w-[75px] h-[75px] sm:w-[150px] sm:h-[150px]"/></SwiperSlide>
-                        <SwiperSlide><img src={aiaa_logo} alt="afs_logo" className="w-[75px] h-[75px] sm:w-[150px] sm:h-[150px]"/></SwiperSlide>
-                        <SwiperSlide><img src={sat_logo} alt="afs_logo" className="w-[120px] h-[75px] sm:w-[231px] sm:h-[150px]"/></SwiperSlide>
-                        <SwiperSlide><img src={wacp_logo} alt="afs_logo" className="w-[149px] h-[75px] sm:w-[346px] sm:h-[150px]"/></SwiperSlide>
-
-
-                    </Swiper>
-
-                    <Swiper
-                        modules={[Autoplay]}
-                        autoplay= {{delay: 1000,}}
-                        className="mt-12"
-                        loop = {true}
-                        breakpoints={{
-                            300:{
-                                spaceBetween: 10,
-                                slidesPerView: 2,
-                            },
-                            700: {
-                                spaceBetween: 70,
-                                slidesPerView: 3,
-                            }
-                        }}
-                    >
-                        <SwiperSlide><img src={cambridge_logo} alt="afs_logo" className="w-[232px] h-[75px] sm:w-[464px] sm:h-[150px]"/></SwiperSlide>
-                        <SwiperSlide><img src={ted_logo} alt="afs_logo" className="w-[273px] h-[75px] sm:w-[547px] sm:h-[150px]"/></SwiperSlide>
-                        <SwiperSlide><img src={diamond_logo} alt="afs_logo" className="w-[106px] h-[75px] sm:w-[213px] sm:h-[150px]"/></SwiperSlide>
-                        <SwiperSlide><img src={cambridgeassesment_logo} alt="afs_logo" className="w-[124px] h-[75px] sm:w-[249px] sm:h-[150px]"/></SwiperSlide>
-                    </Swiper>
-
-
-                </div>*/}
       </div>
-
+      
       {/* Testimonial Section */}
       <div
-        className="bg-yellow pt-20 overflow-x-hidden  h-[1000px] "
+        className="bg-yellow pt-20 overflow-x-hidden h-[1000px] "
         data-aos="fade-up"
       >
         <div className="max-w-7xl mx-auto px-5">
@@ -1670,39 +1378,11 @@ function Home() {
               })}
             </motion.div>
           </div>
-
-          {/* <Swiper
-                        modules={{Autoplay}}
-                        autoplay= {{delay: 500}}
-                        slidesPerView={2}
-                        spaceBetween={50}
-                        loop = {true}
-                        className="mt-12"
-                    >
-                        {Testimonial.map((items) => {
-                            return(
-                                <>
-                                   <SwiperSlide>
-                                        <div className ={`bg-white w-fit h-fit p-14 rounded-[24px]`}>
-                                            <img src={testimonial_stars} alt="rating-image" />
-                                            <h5 className={`font-causten font-normal text-[32px] leading-[44px] tracking-[-2%] mt-7 ${items.width}`}>{items.content}</h5>
-                                            <h6 className = "font-causten font-medium text-[18px] leading-[28px] mt-12">- {items.name}</h6>
-                                            <h6 className = "font-causten font-medium text-[16px] leading-[24px] text-[#667085]">{items.parentof}</h6>
-                                        </div>
-                                    </SwiperSlide>
-                                   
-                                </>
-                            )
-                        })}
-                    </Swiper> */}
         </div>
       </div>
 
       {/* Ruh'lington Post */}
-      <div
-        className="max-w-screen-xl mx-auto py-12 sm:px-5 sm:py-24  xl:p-24 "
-        data-aos="fade-up"
-      >
+      <div className="max-w-screen-xl mx-auto py-12 sm:px-5 sm:py-24  xl:p-24 " data-aos="fade-up">
         <div className="flex flex-col sm:flex-row sm:gap-x-5 xl:gap-x-12 gap-y-16 sm:gap-y-0 ">
           <div className="flex flex-col sm:items-start items-center sm:flex-none">
             <h1 className="font-causten font-bold text-[32px] sm:text-[40px] leading-[44px] tracking-[-2%] text-green ">
@@ -1722,41 +1402,43 @@ function Home() {
           </div>
           
          
-            <div className="flex flex-col gap-y-16">
-               {blogData && blogData?.slice(0, 2).map((blog,index) =>( 
-              <div className="flex flex-col gap-y-5 sm:gap-y-0 sm:flex-row gap-x-5 px-3 max-w-[650px]">
-                <img
-                   src={`${blog.image?.[0].url}`}
-                  alt="post_image_1"
-                  className="w-full h-[240px] object-cover sm:w-[279px] sm:h-[240px] rounded-[16px]"
-                />
+          <div className="flex flex-col gap-y-16">
+              {blogData && blogData?.slice(0, 2).map((blog,index) =>( 
+                <div className="flex flex-col gap-y-5 sm:gap-y-0 sm:flex-row gap-x-5 px-3 max-w-[650px]">
+                  <img
+                    src={`${blog.image?.[0].url}`}
+                    alt="post_image_1"
+                    className="w-full h-[240px] object-cover sm:w-[279px] sm:h-[240px] rounded-[16px]"
+                  />
 
-                <div>
-                  {/* <h5 className="font-causten font-semibold text-[14px] text-brown ">Care tips</h5> */}
+                  <div>
+                    {/* <h5 className="font-causten font-semibold text-[14px] text-brown ">Care tips</h5> */}
 
-                  <div className="flex flex-row justify-between items-start mt-3">
-                    <h1 className="font-causten text-[24px] font-bold leading-[32px] text-black w-[357px] sm:w-[239px]">
-                    {blog.heading} 
-                    </h1>
+                    <div className="flex flex-row justify-between items-start mt-3">
+                      <h1 className="font-causten text-[24px] font-bold leading-[32px] text-black w-[357px] sm:w-[239px]">
+                      {blog.heading} 
+                      </h1>
 
-                    <Link to="/blog/1">
-                      <img
-                        src={arrow_up_right}
-                        alt="arrow-up-right"
-                        className="w-[24px] h-[24px] cursor-pointer"
-                      />
-                    </Link>
+                      <Link to="/blog/1">
+                        <img
+                          src={arrow_up_right}
+                          alt="arrow-up-right"
+                          className="w-[24px] h-[24px] cursor-pointer"
+                        />
+                      </Link>
+                    </div>
+
+                    <p className="font-causten text-[16px] font-normal leading-[24px] mt-3">
+                      {blog.paragraph}
+                    </p>
                   </div>
-
-                  <p className="font-causten text-[16px] font-normal leading-[24px] mt-3">
-                     {blog.paragraph}
-                  </p>
                 </div>
-                  </div>
-          ))}
-              </div>
+              ))}
+          </div>
+        </div>
+        
       
-        <div className="flex   gap-x-3 sm:gap-x-12  mt-20">
+        <div className="flex gap-x-3 sm:gap-x-12  mt-20">
           {instafeed &&
             instafeed.map(
               (item, index) =>
@@ -1777,6 +1459,9 @@ function Home() {
       </div>
 
       <Curioustoknowmore />
+
+      
+    
 
       {/* Pop-up Menu */}
       <div
@@ -1885,7 +1570,6 @@ function Home() {
             </a>
           </div>
         </div>
-      </div>
       </div>
     </>
   );

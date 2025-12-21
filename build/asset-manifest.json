@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.45405d77.css",
-    "main.js": "/static/js/main.0e4177f9.js",
+    "main.css": "/static/css/main.2719092d.css",
+    "main.js": "/static/js/main.7467030b.js",
     "static/js/488.12ce6193.chunk.js": "/static/js/488.12ce6193.chunk.js",
     "static/media/Weigh-Scale---Ruh.gif": "/static/media/Weigh-Scale---Ruh.dc685ce4081f33bd4ba7.gif",
     "static/media/roles-of-future.gif": "/static/media/roles-of-future.9b7117e7cb6b43c6baa0.gif",
@@ -111,12 +111,12 @@
     "static/media/ruh_racecourse.png": "/static/media/ruh_racecourse.f3a9baaf37bd7ba1ea17.png",
     "static/media/friends_doc.png": "/static/media/friends_doc.4a55f08cef5513b23587.png",
     "index.html": "/index.html",
-    "main.45405d77.css.map": "/static/css/main.45405d77.css.map",
-    "main.0e4177f9.js.map": "/static/js/main.0e4177f9.js.map",
+    "main.2719092d.css.map": "/static/css/main.2719092d.css.map",
+    "main.7467030b.js.map": "/static/js/main.7467030b.js.map",
     "488.12ce6193.chunk.js.map": "/static/js/488.12ce6193.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.45405d77.css",
-    "static/js/main.0e4177f9.js"
+    "static/css/main.2719092d.css",
+    "static/js/main.7467030b.js"
   ]
 }
